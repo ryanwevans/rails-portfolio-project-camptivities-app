@@ -1,0 +1,2 @@
+class CampCounselor < ApplicationRecord
+end
