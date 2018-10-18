@@ -1,0 +1,2 @@
+class CampCounselorsController < ApplicationController
+end
