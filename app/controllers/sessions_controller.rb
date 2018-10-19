@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       redirect_to camp_counselor_path(@counselor)
     else
       redirect_to signin_path
+    end
   end
 
   def destroy
