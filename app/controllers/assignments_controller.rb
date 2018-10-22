@@ -9,12 +9,12 @@ class AssignmentsController < ApplicationController
   end
 
   def new
-    @assignment = Assignment.nre
+    @assignment = Assignment.new
   end
 
   def create
     @assignment = Assignment.create(assignment_params)
-    if @assignment.save
+    if @assignment.save!
       redirect_to assignments_path(@assignment)
     else
       render :new
