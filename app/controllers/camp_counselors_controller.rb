@@ -7,7 +7,7 @@ class CampCounselorsController < ApplicationController
 
   def create
     @counselor = CampCounselor.create(counselor_params)
-    if @counselor.save
+    if @counselor.save!
       session[:user_id] = @counselor.id
       redirect_to camp_counselor_path(@counselor)
     else
