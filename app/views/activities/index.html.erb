@@ -1,0 +1,9 @@
+<h2>Camp Activities</h2>
+<br>
+<%= @activities.each do |activity| %>
+  <%= link_to activity.name, activity_path(activity) %>
+  <br>
+<% end %>
+<br>
+<br>
+<%= link_to "Log Out", logout_path %>
