@@ -1,0 +1,17 @@
+<h1>Create a New Activity:</h1>
+<br>
+<%= form_for @activity do |f| %>
+  <%= f.label :name, "Activity Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :counselors_needed, "How many counselors are needed for this activity?" %>
+  <%= f.number_field :counselors_needed %>
+  <p> <i>Note: number of counselors includes one leader</i> </p>
+  <br>
+  <%= f.submit "Create Activity" %>
+<% end %>
+<br>
+<%= link_to "See All Activities", activities_path %>
+<br>
+<br>
+<%= link_to "Log Out", logout_path %>
