@@ -1,0 +1,14 @@
+<h2>Camp Counselor: <%= @counselor.name %></h2>
+
+<p>
+  Name:    <%= @counselor.name %>
+  <br>
+  Age:    <%= @counselor.age %>
+  <br>
+  Leader:    <%= @counselor.leader %>
+  <br>
+</p>
+<br>
+<%= link_to "Update Your Profile", edit_camp_counselor_path %>
+<br>
+<a href="/logout">Log Out</a>
