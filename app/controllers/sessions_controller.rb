@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_log_in, only: [:new, :create]
 
   def new
-    @session = Session.new
+    @counselor = CampCounselor.new
   end
 
   def create
-    @counselor = CampCounselor.find(params[:counselor][:name])
+    @counselor = CampCounselor.find_by(name: params[:camp_counselor][:name])
     @counselor.try(:authenticate, params[:password])
     if @counselor
       session[:user_id] = @counselor.id

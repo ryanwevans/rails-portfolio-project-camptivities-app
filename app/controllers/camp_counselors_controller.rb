@@ -1,4 +1,5 @@
 class CampCounselorsController < ApplicationController
+  skip_before_action :require_log_in, only: [:new, :create]
   before_action :set_counselor, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -42,6 +43,6 @@ class CampCounselorsController < ApplicationController
   end
 
   def counselor_params
-    params.require(:counselor).permit(:name, :password)
+    params.require(:camp_counselor).permit(:name, :password)
   end
 end
