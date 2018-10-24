@@ -11,5 +11,14 @@
 
   <body>
     <%= yield %>
+    <br>
+    What would you like to do?
+    <br>
+    <%= link_to "View Activities", activities_path %>
+    <br>
+    <%= link_to "View Available Assignments", assignments_path %>
+    <br>
+    <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
+    </p>
   </body>
 </html>
