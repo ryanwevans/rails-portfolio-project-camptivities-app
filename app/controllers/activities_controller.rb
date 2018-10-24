@@ -45,7 +45,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name)
+    params.require(:activity).permit(:name, :counselors_needed)
   end
 
 end

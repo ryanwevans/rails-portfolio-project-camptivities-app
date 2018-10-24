@@ -39,7 +39,7 @@ class CampCounselorsController < ApplicationController
   private
 
   def set_counselor
-    @counselor = CampCounselor.find_by(id: params[:id])
+    @counselor = CampCounselor.find_by(id: session[:user_id])
   end
 
   def counselor_params

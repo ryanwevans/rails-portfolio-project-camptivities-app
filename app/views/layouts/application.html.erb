@@ -16,9 +16,13 @@
     <br>
     <%= link_to "View Activities", activities_path %>
     <br>
+    <%= link_to "Create an Activity", new_activity_path %>
+    <br>
     <%= link_to "View Available Assignments", assignments_path %>
     <br>
     <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
+    <br>
+    <%= link_to "Log Out", logout_path %>
     </p>
   </body>
 </html>
