@@ -2,7 +2,13 @@ class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @assignments = Assignment.all
+    if params[:camp_counselor_id]
+      @assignments = CampCounselor.find(params[:camp_counselor_id]).assignments
+    elsif params[:activity_id]
+      @assignments = Activity.find(params[:activity_id]).assignments
+    else
+      @assignments = Assignment.all
+    end
   end
 
   def show
