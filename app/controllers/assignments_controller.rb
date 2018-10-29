@@ -51,7 +51,7 @@ class AssignmentsController < ApplicationController
   end
 
   def assignment_params
-    params.require(:assignment).permit(:name, :filled)
+    params.require(:assignment).permit(:name, :filled, :camp_counselor_id, :activity_id)
   end
 
 end

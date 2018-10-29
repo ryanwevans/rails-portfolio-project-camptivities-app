@@ -1,5 +1,13 @@
 <h2><%= @activity.name %></h2>
 <br>
 <p>
-  Counselors Needed: <%= @activity.counselors_needed %>
+  Counselors Needed for this Activity: <%= @activity.counselors_needed %>
+  Counselors Assigned: <%= @counselors_assigned %>
+  There are <%= @num_of_openings %> left
+  <% if @num_of_openings > 0 %>
+    <%= form_for @assignment do |f| %>
+    <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
+    <%= f.submit "Signup for this Activity" %>
+    <% end %>
+  <% end %>
 </p>
