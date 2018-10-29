@@ -17,8 +17,8 @@ DATA = {
     ["Skai Jackson", 10, false, "password"],
     ["Kaleo Elam", 15, false, "password"],
     ["Megan Carpenter", 12, false, "password"],
-    ["Hayden Byerly", 58, true "password"],
-    ["Tenzing Norgay", 55, true "password"],
+    ["Hayden Byerly", 58, true, "password"],
+    ["Tenzing Norgay", 55, true, "password"],
     ["Davis Cleveland", 18, true, "password"],
     ["Cole Sand", 13, false, "password"],
     ["Winston Wallis", 13, false, "password"]
