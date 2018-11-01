@@ -3,8 +3,8 @@
 <p>
   Counselors Needed for this Activity: <%= @activity.counselors_needed %>
   Counselors Assigned: <%= @counselors_assigned %>
-  There are <%= @num_of_openings %> left
-  <% if @num_of_openings > 0 %>
+  There are <%= @activity.num_of_openings %> left
+  <% if @activity.num_of_openings > 0 %>
     <%= form_for @assignment do |f| %>
     <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
     <%= f.submit "Signup for this Activity" %>

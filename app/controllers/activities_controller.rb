@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @assignment = Assignment.new
   end
 
   def new
