@@ -6,7 +6,7 @@ class Activity < ApplicationRecord
   has_many :camp_counselors, through: :assignments
 
   def counselors_assigned
-    Assignments.where((activity_id: self.id) && (camp_counselor_id: !nil)).count
+    Assignment.where((activity_id: self.id) && (camp_counselor_id: !nil)).count
   end
 
   def num_of_openings
