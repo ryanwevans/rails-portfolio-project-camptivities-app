@@ -1,9 +1,6 @@
 <h1>Create an Assignment for an Activity:</h1>
 <br>
 <%= form_for @assignment do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
   <%= f.label :activity_id, "Choose the Activity for this Assignment" %>
   <%= f.collection_select :activity_id, Activity.all, :id, :name, include_blank: "Choose One" %>
   <br>

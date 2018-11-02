@@ -7,7 +7,7 @@
     <%= "This assignment has been filled" %>
   <% else %>
     <%= "This assignment is still open" %>
-    <% form_for @assignment do |f| %>
+    <%= form_for @assignment do |f| %>
     <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
     <%= f.hidden_field :filled, :value => true %>
     <%= f.submit "Signup to Oversee This Activity!" %>
