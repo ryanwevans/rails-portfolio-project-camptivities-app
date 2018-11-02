@@ -7,13 +7,9 @@
   <%= f.label :activity_id, "Choose the Activity for this Assignment" %>
   <%= f.collection_select :activity_id, Activity.all, :id, :name, include_blank: "Choose One" %>
   <br>
-  <%= f.radio_button(:filled, false) %>
-  <%= f.label(:filled, "This assignment is currently open") %>
-  <%= f.radio_button(:filled, true) %>
-  <%= f.label(:filled, "This assignment is already filled") %>
-  <br>
   <%= f.radio_button(:leader_needed, true) %>
   <%= f.label(:leader_needed, "Counselor must be 18 or older") %>
+  <br>
   <%= f.radio_button(:leader_needed, false) %>
   <%= f.label(:leader_needed, "Counselor must be under 18") %>
   <br>
