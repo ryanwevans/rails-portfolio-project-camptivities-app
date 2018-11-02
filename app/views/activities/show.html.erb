@@ -4,7 +4,7 @@
   <%= @activity.description %>
   <br>
   Counselors Needed for this Activity: <%= @activity.counselors_needed %>
-  <% form_for @assignment, :method => 'update' do |f| %>
+  <% form_for @assignment do |f| %>
   <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
   <%= f.submit "Signup to Oversee This Activity!" %>
   <% end %>
