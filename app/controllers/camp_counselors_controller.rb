@@ -17,6 +17,7 @@ class CampCounselorsController < ApplicationController
   end
 
   def show
+    @assignments = @counselor.assignments
   end
 
   def edit

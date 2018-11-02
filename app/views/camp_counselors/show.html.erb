@@ -1,11 +1,15 @@
 <h2>Camp Counselor: <%= @counselor.name %></h2>
 
 <p>
-  Name:     <%= @counselor.name %>
+  <%= @counselor.name %>
   <br>
-  Age:      <%= @counselor.age %>
+  <%= @counselor.age %> years old
   <br>
-  Leader:   <%= @counselor.leader %>
+    <%= return "#{@counselor.name} is a Leader" if @counselor.leader %>
   <br>
+  Here is a list of your assignments:
+  <%= @assignments.each do |assignment| %>
+    <%= link_to assignment.name, assignment_path(assignment) %>
+    <br>
+  <% end %>
 </p>
-<p>
