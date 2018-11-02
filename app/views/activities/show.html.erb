@@ -3,9 +3,15 @@
 <p>
   <%= @activity.description %>
   <br>
-  Counselors Needed for this Activity: <%= @activity.counselors_needed %>
-  <% form_for @assignment do |f| %>
-  <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
-  <%= f.submit "Signup to Oversee This Activity!" %>
+  Counselors Needed to Oversee This Activity: <%= @activity.counselors_needed %>
+  <br>
+  <% if @assignment %>
+    <% form_for @assignment do |f| %>
+    <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
+    <%= f.hidden_field :filled, :value => true %>
+    <%= f.submit "Signup to Oversee This Activity!" %>
+    <% end %>
+  <% else %>
+    <%= "This activity has no open assignments" %>
   <% end %>
 </p>
