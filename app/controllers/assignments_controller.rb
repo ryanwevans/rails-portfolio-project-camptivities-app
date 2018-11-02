@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
   end
 
   def show
+    @activity = @assignment.activity
   end
 
   def new
