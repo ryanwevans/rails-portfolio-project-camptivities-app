@@ -5,6 +5,7 @@
   <br>
   Counselors Needed to Oversee This Activity: <%= @activity.counselors_needed %>
   <br>
+  <br>
   <% if @assignment %>
     <%= form_for @assignment do |f| %>
     <%= f.hidden_field :camp_counselor_id, :value => @current_counselor.id %>
@@ -14,5 +15,7 @@
     <% end %>
   <% else %>
     <%= "This activity has no open assignments" %>
+    <br>
+    <%= link_to "Create an Assignment", new_assignment_path %>
   <% end %>
 </p>
