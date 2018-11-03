@@ -2,6 +2,7 @@
 <br>
 <% @assignments.each do |assignment| %>
   <%= link_to assignment.activity.name, assignment_path(assignment) %>
+  <br>
   <% if assignment.filled %>
     <%= "(This assignment has been filled)" %>
   <% else %>
