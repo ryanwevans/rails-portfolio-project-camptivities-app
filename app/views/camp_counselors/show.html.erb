@@ -16,7 +16,7 @@
       <%= link_to assignment.activity.name, assignment_path(assignment) %>
       <br>
     <% end %>
-  <% elsif @assignments == nil %>
+  <% elsif !@assignments %>
     <%= "You have no assignments yet" %>
   <% end %>
 </p>
