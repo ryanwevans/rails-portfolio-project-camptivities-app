@@ -1,6 +1,12 @@
 <h2>Camp Activity Assignments</h2>
 <br>
 <% @assignments.each do |assignment| %>
-  <%= link_to assignment.name, assignment_path(assignment) %>
+  <%= link_to assignment.activity.name, assignment_path(assignment) %>
+  <% if assignment.filled %>
+    <%= "(This assignment has been filled)" %>
+  <% else %>
+    <%= "(This assignment is still open)" %>
+  <% end %>
+  <br>
   <br>
 <% end %>
