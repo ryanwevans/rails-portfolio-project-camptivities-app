@@ -10,15 +10,15 @@
   </head>
 
   <body>
-			<section class="todoapp ng-scope">
+			<section class="todoapp">
 				<header class="header">
           Camptivities
 				</header>
 			</section>
       <%= yield %>
-			<footer class="info ng-scope">
+			<footer>
 				<p>What would you like to do?</p>
-				<p>Credits:
+				<p>
           <%= link_to "View Available Activities", activities_path %>
           <%= link_to "View Available Assignments", assignments_path %>
           <% if logged_in? %>
@@ -31,7 +31,6 @@
           <br>
           <%= link_to "Log Out", logout_path %>
 				</p>
-				<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 			</footer>
 
   </body>
