@@ -14,13 +14,16 @@
     <br>
     What would you like to do?
     <br>
-    <%= link_to "View Activities", activities_path %>
-    <br>
-    <%= link_to "Create an Activity", new_activity_path %>
+    <%= link_to "View Available Activities", activities_path %>
     <br>
     <%= link_to "View Available Assignments", assignments_path %>
     <br>
+    <%= if self.leader %>
+    <%= link_to "Create an Activity", new_activity_path %>
+    <br>
     <%= link_to "Create an Assignment", new_assignment_path %>
+    <% end %>
+    <br>
     <br>
     <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
     <br>
