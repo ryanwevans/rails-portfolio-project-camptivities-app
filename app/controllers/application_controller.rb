@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :require_log_in
 
   helper_method :current_counselor
+  helper_method :logged_in?
 
    def logged_in?
      !!current_counselor
