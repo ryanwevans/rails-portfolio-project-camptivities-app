@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsPortfolioProjectCamptivitiesApp</title>
+    <title>Camptivities</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,28 +10,30 @@
   </head>
 
   <body>
-			<section class="todoapp">
-				<header class="header">
-          Camptivities
-				</header>
-			</section>
+		<section class="todoapp">
+			<header class="header">
+        Camptivities
+			</header>
+
       <%= yield %>
 			<footer>
-				<p>What would you like to do?</p>
+				<p class="footer_header">What would you like to do?</p>
 				<p>
           <%= link_to "View Available Activities", activities_path %>
           <%= link_to "View Available Assignments", assignments_path %>
+          <br>
           <% if logged_in? %>
             <% if current_counselor.leader %>
               <%= link_to "Create an Activity", new_activity_path %>
               <%= link_to "Create an Assignment", new_assignment_path %>
             <% end %>
           <% end %>
+          <br>
           <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
           <br>
           <%= link_to "Log Out", logout_path %>
 				</p>
 			</footer>
-
+      </section>
   </body>
 </html>
