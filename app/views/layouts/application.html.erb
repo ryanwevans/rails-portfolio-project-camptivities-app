@@ -26,11 +26,13 @@
               <%= link_to "Create an Activity", new_activity_path %>
               <%= link_to "Create an Assignment", new_assignment_path %>
             <% end %>
+            <br>
+            <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
+            <br>
+            <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_counselor) %>
+            <br>
+            <%= link_to "Log Out", logout_path %>
           <% end %>
-          <br>
-          <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
-          <br>
-          <%= link_to "Log Out", logout_path %>
 				</p>
 			</footer>
     </section>

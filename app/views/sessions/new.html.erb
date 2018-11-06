@@ -1,17 +1,20 @@
 <h2>Welcome to Camptivities!</h2>
 <br>
-<%= form_for :camp_counselor, url: signin_path, method: :post do |f| %>
+<%= form_for :camp_counselor, html: { autocomplete: "off" }, url: signin_path, method: :post do |f| %>
 <%= f.label :name %>
+<br>
 <%= f.text_field :name %>
 <br>
 <%= f.label :password %>
+<br>
 <%= f.password_field :password %>
 <br>
 <%= f.submit "Login" %>
 <% end %>
-or
-<%= form_tag new_camp_counselor_path, method: :get do %>
-<%= submit_tag "Create Camp Counselor" %>
-<% end %>
 
-<%= link_to('Log in with Github', '/auth/github') %>
+<br>
+or
+
+<%= form_tag new_camp_counselor_path, method: :get do %>
+<%= submit_tag "Create Account" %>
+<% end %>
