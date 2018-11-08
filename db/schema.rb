@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_022721) do
     t.boolean "leader", default: false
     t.string "uid"
     t.string "provider"
+    t.string "email"
   end
 
 end
