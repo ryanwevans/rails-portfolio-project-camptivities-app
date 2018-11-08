@@ -22,14 +22,14 @@
           <%= link_to "View Available Assignments", assignments_path %>
           <br>
           <% if logged_in? %>
-            <% if current_counselor.leader %>
+            <% if current_user.leader %>
               <%= link_to "Create an Activity", new_activity_path %>
               <%= link_to "Create an Assignment", new_assignment_path %>
             <% end %>
             <br>
-            <%= link_to "View Your Profile", camp_counselor_path(:current_counselor) %>
+            <%= link_to "View Your Profile", camp_counselor_path(:current_user) %>
             <br>
-            <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_counselor) %>
+            <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
             <br>
             <%= link_to "Log Out", logout_path %>
           <% end %>

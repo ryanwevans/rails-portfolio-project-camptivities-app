@@ -16,7 +16,7 @@
   <% else %>
     <%= "This activity has no open assignments" %>
     <br>
-    <% if current_counselor.leader %>
+    <% if current_user.leader %>
       <%= link_to "Create an Assignment", new_assignment_path %>
     <% end %>
   <% end %>
