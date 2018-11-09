@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   resources :camp_counselors do
     resources :assignments, only: [:show, :index]
   end
+
   resources :activities do
     resources :assignments, only: [:index, :edit]
   end
+  
   resources :assignments
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/auth/github/callback' => 'sessions#create'
 end
