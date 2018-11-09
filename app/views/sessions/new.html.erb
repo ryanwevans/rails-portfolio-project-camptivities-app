@@ -1,14 +1,10 @@
 <h2>Welcome to Camptivities!</h2>
 <br>
 <p>
-  <%= form_for :camp_counselor, html: { autocomplete: "off" }, url: signin_path, method: :post do |f| %>
+  <%= form_for :camp_counselor, autocomplete: "off", url: signin_path, method: :post do |f| %>
   <%= f.label :name %>
   <br>
   <%= f.text_field :name %>
-  <br>
-  <%= f.label :email %>
-  <br>
-  <%= f.text_field :email %>
   <br>
   <%= f.label :password %>
   <br>
@@ -16,8 +12,6 @@
   <br>
   <%= f.submit "Login" %>
   <% end %>
-  <br>
-  <%# link_to('Log in with GitHub!', '/auth/github/') %>
   <br>
   or
   <br>
