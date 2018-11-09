@@ -22,10 +22,8 @@
           <%= link_to "View Available Assignments", assignments_path %>
           <br>
           <% if logged_in? %>
-            <% if current_user.leader %>
-              <%= link_to "Create an Activity", new_activity_path %>
-              <%= link_to "Create an Assignment", new_assignment_path %>
-            <% end %>
+            <%= link_to "Create an Activity", new_activity_path %>
+            <%= link_to "Create an Assignment", new_assignment_path %>
             <br>
             <%= link_to "View Your Profile", camp_counselor_path(:current_user) %>
             <br>

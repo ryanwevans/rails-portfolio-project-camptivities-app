@@ -7,21 +7,15 @@
   <br>
   <br>
   <% if @assignment %>
-    <% if @assignment.leader_needed == @current_user.leader %>
-      <%= form_for @assignment do |f| %>
+    <%= form_for @assignment do |f| %>
       <%= f.hidden_field :camp_counselor_id, :value => @current_user.id %>
       <%= f.hidden_field :activity_id, :value => @activity.id %>
       <%= f.hidden_field :filled, :value => true %>
       <%= f.submit "Signup to Oversee This Activity!" %>
-      <% end %>
     <% end %>
   <% else %>
     <%= "This activity has no open assignments" %>
     <br>
-    <% if @current_user.leader %>
-      <% if @activity.counselors_needed > @activity.campcounselors.count %>
-      <%= link_to "Create an Assignment", new_assignment_path %>
-      <% end %>
-    <% end %>
+    <%= link_to "Create an Assignment", new_assignment_path %>
   <% end %>
 </p>

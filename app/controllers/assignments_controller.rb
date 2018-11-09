@@ -3,13 +3,31 @@ class AssignmentsController < ApplicationController
 
   def index
     if params[:camp_counselor_id]
-      @assignments = CampCounselor.find(params[:camp_counselor_id]).assignments
-    elsif params[:activity_id]
-      @assignments = Activity.find(params[:activity_id]).assignments
+      @counselor = CampCounselor.find_by(params[:camp_counselor_id])
+      @assignments = @counselor.assignments
     else
       @assignments = Assignment.all
     end
   end
+
+        if params[:artist_id]
+            @artist = Artist.find_by(id: params[:artist_id])
+            if @artist.nil?
+              redirect_to artists_path, alert: "Artist not found"
+            elsif @preference
+              @songs = @artist.songs.order(title: @preference.song_sort_order)
+            else @preference
+              @songs = @artist.songs
+            end
+          elsif @preference
+            @songs = Song.order(title: @preference.song_sort_order)
+          else
+            @songs = Song.all
+          end
+
+
+
+
 
   def show
     @activity = @assignment.activity
@@ -52,7 +70,7 @@ class AssignmentsController < ApplicationController
   end
 
   def assignment_params
-    params.require(:assignment).permit(:name, :filled, :leader_needed, :camp_counselor_id, :activity_id)
+    params.require(:assignment).permit(:name, :filled, :camp_counselor_id, :activity_id)
   end
 
 end
