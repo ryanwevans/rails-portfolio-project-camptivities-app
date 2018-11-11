@@ -11,7 +11,7 @@
 
 DATA = {
   :camp_counselor_keys =>
-    ["name", "age", "leader", "password"],
+    ["name", "age", "admin", "password"],
   :camp_counselors => [
     ["Max Charles", 32, true, "password"],
     ["Skai Jackson", 10, false, "password"],
@@ -24,16 +24,16 @@ DATA = {
     ["Winston Wallis", 13, false, "password"]
   ],
   :activity_keys =>
-   ["name", "counselors_needed"],
+   ["name"],
   :activities => [
-    ["Bike Riding", 2],
-    ["Nature Hike", 2],
-    ["Canoeing", 3],
-    ["Soccer", 4],
-    ["Swimming", 2],
-    ["Go Carts", 4],
-    ["Volleyball", 2],
-    ["Arts and Crafts", 3]
+    ["Bike Riding"],
+    ["Nature Hike"],
+    ["Canoeing"],
+    ["Soccer"],
+    ["Swimming"],
+    ["Go Carts"],
+    ["Volleyball"],
+    ["Arts and Crafts"]
   ]
 }
 
