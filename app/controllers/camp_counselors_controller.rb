@@ -44,6 +44,6 @@ class CampCounselorsController < ApplicationController
   end
 
   def counselor_params
-    params.require(:camp_counselor).permit(:name, :email, :age, :leader, :password)
+    params.require(:camp_counselor).permit(:name, :email, :age, :admin, :uid, :provider, :password)
   end
 end

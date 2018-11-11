@@ -10,25 +10,6 @@ class AssignmentsController < ApplicationController
     end
   end
 
-        if params[:artist_id]
-            @artist = Artist.find_by(id: params[:artist_id])
-            if @artist.nil?
-              redirect_to artists_path, alert: "Artist not found"
-            elsif @preference
-              @songs = @artist.songs.order(title: @preference.song_sort_order)
-            else @preference
-              @songs = @artist.songs
-            end
-          elsif @preference
-            @songs = Song.order(title: @preference.song_sort_order)
-          else
-            @songs = Song.all
-          end
-
-
-
-
-
   def show
     @activity = @assignment.activity
   end
