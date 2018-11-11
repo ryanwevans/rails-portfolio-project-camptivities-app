@@ -16,4 +16,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.destroy :user_id
+    render :new
+  end
+
 end
