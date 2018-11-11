@@ -3,10 +3,12 @@
 <% @assignments.each do |assignment| %>
   <%= link_to assignment.activity.name, assignment_path(assignment) %>
   <br>
-  <% if assignment.filled %>
-    <%= "(This assignment has been filled)" %>
-  <% else %>
+  Rating: <%= assignment.rating %>
+  <br>
+  <% if !assignment.filled %>
     <%= "(This assignment is still open)" %>
+  <% else %>
+    <%= "(This assignment has been filled)" %>
   <% end %>
   <br>
   <br>
