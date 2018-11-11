@@ -10,8 +10,10 @@
   <%= f.label :age %>
   <%= f.text_field :age %>
   <br>
-  <%= f.radio_button(:admin, true) %>
-  <%= f.label(:admin, "Camp Admin") %>
+  <br>
+  <%= f.label(:admin, "Camp Admin") %><br>
+  <%= f.radio_button(:admin, true) %>Yes
+  <%= f.radio_button(:admin, false) %>No
   <br><br>
   <%= f.submit "Update Profile" %>
 <% end %>

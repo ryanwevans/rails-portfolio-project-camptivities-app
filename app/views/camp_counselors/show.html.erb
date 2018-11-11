@@ -1,24 +1,27 @@
 <h2>Camp Counselor Profile Page</h2>
 <br>
 <h3><%= @counselor.name %></h3>
+<br>
 <p>
-  <%= @counselor.email %>
+  Email: <%= @counselor.email %>
   <br>
-  <%= @counselor.age %> years old
   <br>
-    <% if @counselor.leader %>
-    <%= "You are a Leader" %>
-    <% end %>
-    <br>
+  Age: <%= @counselor.age %> years old
   <br>
-  Here is a list of your assignments:
   <br>
-  <% if @assignments %>
-    <% @assignments.each do |assignment| %>
+  <% if @counselor.admin %>
+    <%= "You have a Camp Admin account" %>
+  <% end %>
+  <br>
+  <br>
+  Here are all of your assignments:
+  <br>
+  <% if @counselor.assignments %>
+    <% @counselor.assignments.each do |assignment| %>
       <%= link_to assignment.activity.name, assignment_path(assignment) %>
       <br>
     <% end %>
-  <% elsif !@assignments %>
+  <% else %>
     <%= "You have no assignments yet" %>
   <% end %>
 </p>
