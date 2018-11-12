@@ -1,7 +1,11 @@
 <h2>Camp Activities</h2>
 <br>
 <% @activities.each do |activity| %>
-  <%= link_to "#{activity.name}", activity_path(activity) %>
-  <br>
-  <br>
+  <p>
+    <strong><%= link_to "#{activity.name}", activity_path(activity) %></strong>
+    <br>
+    <%= activity.description %>
+    <br>
+    <br>
+  </p>
 <% end %>

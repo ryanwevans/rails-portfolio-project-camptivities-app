@@ -1,15 +1,22 @@
 <h2>Camp Activity Assignments</h2>
 <br>
 <% @assignments.each do |assignment| %>
-  <%= link_to assignment.activity.name, assignment_path(assignment) %>
-  <br>
-  Rating: <%= assignment.rating %>
-  <br>
-  <% if !assignment.filled %>
-    <%= "(This assignment is still open)" %>
-  <% else %>
-    <%= "(This assignment has been filled)" %>
-  <% end %>
-  <br>
-  <br>
+  <h3><%= link_to assignment.activity.name, assignment_path(assignment) %></h3>
+  <p>
+    <%= assignment.activity.description %>
+    <br>
+    <br>
+    Rating: <%= assignment.rating %>
+    <br>
+    <br>
+    <em>
+    <% if !assignment.filled %>
+      <%= "(This assignment is still open)" %>
+    <% else %>
+      <%= "(This assignment has been filled)" %>
+    <% end %>
+    </em>
+    <br>
+    <br>
+  </p>
 <% end %>

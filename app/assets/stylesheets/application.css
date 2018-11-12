@@ -40,7 +40,7 @@
  body {
  	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
  	line-height: 1.4em;
-  background-image: url('markus-spiske-1085949-unsplash.png');
+  /* background-image: url('markus-spiske-1085949-unsplash.png'); */
   background-repeat: no-repeat;
   background-position: 50% 0;
   -ms-background-size: cover;
@@ -48,7 +48,7 @@
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
- 	/* background: #f5f5f5; */
+ 	background: #ccd7ea;
  	color: #404040;
  	min-width: 230px;
  	max-width: 550px;
@@ -59,10 +59,11 @@
  }
 
  .header {
-   font: 30px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  	line-height: 1.4em;
-  	/* background: #f5f5f5; */
-  	color: #404040;
+  font: 30px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 	margin: 10px 0 60px 0;
+	line-height: 1.4em;
+ 	text-align: center;
+	color: #ef6969;
  }
 
  .hidden {

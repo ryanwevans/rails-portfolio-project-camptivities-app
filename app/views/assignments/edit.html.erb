@@ -1,4 +1,4 @@
-<h2>Create an Assignment for an Activity:</h2>
+<h2>Update an Assignment for an Activity:</h2>
 <br>
 <%= form_for @assignment do |f| %>
   <%= f.label :activity_id, "Choose the Activity for this Assignment" %>
@@ -7,8 +7,10 @@
   <% else %>
     <%= f.collection_select :activity_id, Activity.all, :id, :name, include_blank: "Choose One" %>
   <% end %>
+  <%= f.label :rating, "Rating: " %>
+  <%= f.number_field :rating, in: 1..5 %>
   <br>
   <br>
-  <%= f.submit "Create Assignment" %>
+  <%= f.submit "Update Assignment" %>
 <% end %>
 <br>

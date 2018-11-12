@@ -1,4 +1,4 @@
-<h2>Create a New Activity:</h2>
+<h2>Update <%= @activity.name %> Activity:</h2>
 <br>
 <%= form_for @activity do |f| %>
   <%= f.label :name, "Activity Name" %>
@@ -6,7 +6,7 @@
   <br>
   <%= f.label :description, "Description" %>
   <br>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, size: "36x5" %>
   <br>
-  <%= f.submit "Create Activity" %>
+  <%= f.submit "Update Activity" %>
 <% end %>

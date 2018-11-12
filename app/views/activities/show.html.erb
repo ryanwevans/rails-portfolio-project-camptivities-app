@@ -1,8 +1,7 @@
-<h2><%= @activity.name %></h2>
+<h2>Camp Activity Page</h2>
 <br>
+<h3><%= @activity.name %></h3>
 <p>
-  Description:
-  <br>
   <%= @activity.description %>
   <br>
   <br>
@@ -16,6 +15,10 @@
   <% else %>
     <%= "This activity has no open assignments" %>
     <br>
-    <%= link_to "Create an Assignment", new_activity_assignment_path %>
+    <%= link_to "Create an Assignment", new_activity_assignment_path(@activity) %>
+    <br>
+    <br>
+    <%= link_to "Update this Activity", edit_activity_path(@activity) %>
+
   <% end %>
 </p>
