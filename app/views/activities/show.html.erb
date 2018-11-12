@@ -1,9 +1,14 @@
 <h2><%= @activity.name %></h2>
 <br>
 <p>
+  Description:
+  <br>
   <%= @activity.description %>
   <br>
-  Counselors Needed to Oversee This Activity: <%= @activity.counselors_needed %>
+  <br>
+  <% if @activity.camp_counselor %>
+    Camp Counselor Assigned: <%= @activity.camp_counselor.name %>
+  <% end %>
   <br>
   <br>
   <% if @assignment %>
