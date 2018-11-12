@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :activities do
-    resources :assignments, only: [:index, :edit]
+    resources :assignments
   end
-  
+
   resources :assignments
 
   get '/signin' => 'sessions#new'

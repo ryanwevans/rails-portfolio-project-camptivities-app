@@ -6,11 +6,6 @@
   <%= @activity.description %>
   <br>
   <br>
-  <% if @activity.camp_counselor %>
-    Camp Counselor Assigned: <%= @activity.camp_counselor.name %>
-  <% end %>
-  <br>
-  <br>
   <% if @assignment %>
     <%= form_for @assignment do |f| %>
       <%= f.hidden_field :camp_counselor_id, :value => @current_user.id %>
@@ -21,6 +16,6 @@
   <% else %>
     <%= "This activity has no open assignments" %>
     <br>
-    <%= link_to "Create an Assignment", new_assignment_path %>
+    <%= link_to "Create an Assignment", new_activity_assignment_path %>
   <% end %>
 </p>
