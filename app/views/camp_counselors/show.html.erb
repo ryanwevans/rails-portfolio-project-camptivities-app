@@ -14,14 +14,5 @@
   <% end %>
   <br>
   <br>
-  Here are all of your assignments:
-  <br>
-  <% if @counselor.assignments %>
-    <% @counselor.assignments.each do |assignment| %>
-      <%= link_to assignment.activity.name, assignment_path(assignment) %>
-      <br>
-    <% end %>
-  <% else %>
-    <%= "You have no assignments yet" %>
-  <% end %>
+  <%= link_to "View All Your Assignments", camp_counselor_assignments_path(@counselor) %>
 </p>
