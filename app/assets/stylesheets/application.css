@@ -66,6 +66,10 @@
 	color: #ef6969;
  }
 
+ h2 {
+ 	text-align: center;
+ }
+
  .hidden {
  	display: none;
  }

@@ -6,7 +6,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @assignment = @activity.assignments.where("camp_counselor_id = ?", nil).first
+    @assignments = Assignment.where("activity_id=?", @activity.id).where(camp_counselor_id=nil)
   end
 
   def new
