@@ -11,16 +11,18 @@
     <em>
     <% if !assignment.filled %>
       <%= link_to "Sign Up For This Assignment", assignment_path(assignment) %>
+    <% else %>
+      <%= "One Assignment is Full" %>
     <% end %>
     </em>
+  <% end %>
     <p>
       <br>
-      Fun Rating: <%= assignment.rating %>
+      Fun Rating: <%= @activity.assignments.average(:rating) %>
       <br>
       <br>
       <br>
     </p>
-  <% end %>
   <br>
   <br>
   <%= link_to "Edit this Activity", edit_activity_path(@activity) %>
