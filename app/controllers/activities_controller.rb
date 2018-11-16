@@ -6,7 +6,8 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @assignments = Assignment.where("activity_id=?", @activity.id).where(camp_counselor_id=nil)
+    # @assignments = Assignment.where("activity_id=?", @activity.id).where(camp_counselor_id=nil)
+    @assignments = @activity.assignments.order(:filled)
   end
 
   def new

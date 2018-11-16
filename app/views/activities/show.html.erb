@@ -2,14 +2,25 @@
 <br>
 <h3><%= @activity.name %></h3>
 <br>
-<p>
   <%= @activity.description %>
   <br>
   <br>
   <%= @activity.assignments.length %>
   <br>
-  <%= link_to "View All Assignments for This Activity", activity_assignments_path(@activity) %>
+  <% @assignments.each do |assignment| %>
+    <em>
+    <% if !assignment.filled %>
+      <%= link_to "Sign Up For This Assignment", assignment_path(assignment) %>
+    <% end %>
+    </em>
+    <p>
+      <br>
+      Fun Rating: <%= assignment.rating %>
+      <br>
+      <br>
+      <br>
+    </p>
+  <% end %>
   <br>
   <br>
-  <%= link_to "Update this Activity", edit_activity_path(@activity) %>
-</p>
+  <%= link_to "Edit this Activity", edit_activity_path(@activity) %>
