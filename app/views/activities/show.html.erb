@@ -1,28 +1,26 @@
-<h2>Activity Page</h2>
+<h2><%= @activity.name %></h2>
 <br>
-<h3><%= @activity.name %></h3>
+<h3><%= @activity.description %></h3>
+<p>
+  <br>
+  Fun Rating: <%= @activity.assignments.average(:rating) %>
+  <br>
+</p>
 <br>
-  <%= @activity.description %>
-  <br>
-  <br>
-  <%= @activity.assignments.length %>
-  <br>
-  <% @assignments.each do |assignment| %>
-    <em>
-    <% if !assignment.filled %>
-      <%= link_to "Sign Up For This Assignment", assignment_path(assignment) %>
-    <% else %>
-      <%= "One Assignment is Full" %>
-    <% end %>
-    </em>
+<%= @activity.assignments.length %>
+<br>
+<% @assignments.each do |assignment| %>
+  <em>
+  <% if !assignment.filled %>
+    <%= link_to "Sign Up For This Assignment", assignment_path(assignment) %>
+    <br>
+  <% else %>
+    <%= "One Assignment is Full" %>
+    <br>
   <% end %>
-    <p>
-      <br>
-      Fun Rating: <%= @activity.assignments.average(:rating) %>
-      <br>
-      <br>
-      <br>
-    </p>
-  <br>
-  <br>
-  <%= link_to "Edit this Activity", edit_activity_path(@activity) %>
+  </em>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Edit this Activity", edit_activity_path(@activity) %>

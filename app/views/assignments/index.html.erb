@@ -1,7 +1,7 @@
 <% if @counselor %>
   <h2>Assignments for <%= @counselor.name %></h2>
 <% else %>
-  <h2>Assignments for <%= @activity.name %></h2>
+  <h2>All Assignments</h2>
 <% end %>
 <br>
 <br>
@@ -9,14 +9,28 @@
   <h3><%= assignment.activity.name %></h3>
   <em>
   <% if !assignment.filled %>
-    <%= link_to "(This assignment is open)", assignment_path(assignment) %>
+    <%= link_to "This assignment is open", assignment_path(assignment) %>
   <% end %>
   </em>
   <p>
     <%= assignment.activity.description %>
     <br>
     <br>
-    Fun Rating: <%= assignment.rating %>
+    <% if assignment.rating == nil %>
+      <%= form_for assignment do |f| %>
+        <%= f.label :rating, "Rating: " %> 1
+        <%= f.radio_button :rating, '1' %>
+        <%= f.radio_button :rating, '2' %>
+        <%= f.radio_button :rating, '3' %>
+        <%= f.radio_button :rating, '4' %>
+        <%= f.radio_button :rating, '5' %> 5
+        <br>
+        <br>
+        <%= f.submit "Update Assignment" %>
+      <% end %>
+    <% else %>
+      Fun Rating: <%= assignment.rating %>
+    <% end %>
     <br>
     <br>
     <br>
