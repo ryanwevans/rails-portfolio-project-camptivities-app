@@ -20,7 +20,6 @@
 				<p>
           <%= link_to "View All Activities", activities_path %>
           <%= link_to "View All Assignments", assignments_path %>
-          <br>
           <% if logged_in? %>
             <% if current_user.admin %>
               <%= link_to "Create an Activity", new_activity_path %>
@@ -28,10 +27,11 @@
             <% end %>
             <br>
             <%= link_to "View Your Profile", camp_counselor_path(:current_user) %>
-            <br>
             <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
             <br>
             <%= link_to "Log Out", logout_path %>
+            <br>
+            <br>
           <% end %>
 				</p>
 			</footer>

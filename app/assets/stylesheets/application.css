@@ -51,7 +51,7 @@
  	background: #ccd7ea;
  	color: #404040;
  	min-width: 230px;
- 	max-width: 550px;
+ 	max-width: 700px;
  	margin: 0 auto;
  	-webkit-font-smoothing: antialiased;
  	-moz-osx-font-smoothing: grayscale;
@@ -65,6 +65,30 @@
  	text-align: center;
 	color: #ef6969;
  }
+
+ input[type=button], input[type=submit], input[type=reset] {
+    background-color: #ccd7ea;
+    border: none;font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   	line-height: 1.4em;
+   	color: #404040;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+ textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    border: none;font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   	line-height: 1.4em;
+   	color: #404040;
+    background-color: #d5dff2;
+    resize: none;
+}
 
  h2 {
  	text-align: center;

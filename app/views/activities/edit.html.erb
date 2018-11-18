@@ -1,14 +1,19 @@
-<h2>Update <%= @activity.name %> Activity:</h2>
+<h2>Update <%= @activity.name %> Activity</h2>
 <br>
-<%= form_for @activity do |f| %>
-  <%= @activity.name %>
-  <br>
-  <%= f.label :description, "Description" %>
-  <br>
-  <%= f.text_area :description, size: "50x10" %>
-  <br>
-  <%= f.submit "Update Activity" %>
-<% end %>
-<% if @current_user.admin %>
-  <%= link_to "Delete Activity", @activity, method: :delete, data: { confirm: "Delete This Activity?" } %>
-<% end %>
+<div class="fields_with_errors", id="form">
+  <%= form_for @activity do |f| %>
+    <br>
+    <em>
+    <%= f.label :description, "Description:" %>
+    </em>
+    <br>
+    <%= f.text_area :description %>
+    <br>
+    <br>
+    <%= f.submit "Update Activity" %>
+  <% end %>
+</div>
+<br>
+  <% if @current_user.admin %>
+    <%= link_to "Delete Activity", @activity, method: :delete, data: { confirm: "Delete This Activity?" } %>
+  <% end %>
