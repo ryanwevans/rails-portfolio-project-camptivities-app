@@ -1,5 +1,6 @@
 <h2>Update Your Camp Counselor Profile:</h2>
 <br>
+<div class="fields_with_errors", id="form">
 <%= form_for @counselor, html: { autocomplete: "off" } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -17,3 +18,4 @@
   <br><br>
   <%= f.submit "Update Profile" %>
 <% end %>
+</div>

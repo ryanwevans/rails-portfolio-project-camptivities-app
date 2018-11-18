@@ -1,5 +1,6 @@
 <h2>Create Your Camp Counselor Profile:</h2>
 <br>
+<div class="fields_with_errors", id="form">
 <%= form_for @counselor, html: { autocomplete: "off" } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -23,3 +24,4 @@
   <br>
   <%= f.submit "Create Profile" %>
 <% end %>
+</div>
