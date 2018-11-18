@@ -17,6 +17,9 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.create(activity_params)
     if @activity.save!
+      2.times do
+        @activity.assignments.create(:activity_id => @activity.id, :filled => false)
+      end
       redirect_to activity_path(@activity)
     else
       redirect_to :new
