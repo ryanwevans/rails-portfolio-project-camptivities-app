@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @counselor.id
       redirect_to camp_counselor_path(@counselor)
     else
+      flash[:notice] = "Invalid Entry"
       redirect_to signin_path
     end
   end

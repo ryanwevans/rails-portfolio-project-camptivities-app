@@ -1,5 +1,10 @@
 <h2>Welcome to Camptivities!</h2>
 <br>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
 <p>
   <%= form_for :camp_counselor, autocomplete: false, url: signin_path, method: :post do |f| %>
   <%= f.label :name %>
