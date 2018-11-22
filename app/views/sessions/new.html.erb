@@ -6,10 +6,11 @@
   <% end %>
 
 <p>
-  <%= form_for :camp_counselor, autocomplete: false, url: signin_path, method: :post do |f| %>
+  <%= form_for :camp_counselor, url: signin_path, method: :post do |f| %>
   <%= f.label :name %>
   <br>
   <%= f.text_field :name %>
+  <br>
   <br>
   <%= f.label :password %>
   <br>
@@ -20,7 +21,8 @@
   <br>
   or
   <br>
+  <br>
   <%= form_tag new_camp_counselor_path, method: :get do %>
-  <%= submit_tag "Create Account" %>
+  <%= submit_tag "Create an Account" %>
   <% end %>
 </p>

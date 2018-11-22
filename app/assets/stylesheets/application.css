@@ -94,6 +94,11 @@
  	text-align: center;
  }
 
+ div.notice {
+   color: red;
+   font-style: italic;
+ }
+
  .hidden {
  	display: none;
  }

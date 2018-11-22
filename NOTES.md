@@ -13,6 +13,6 @@ Tasks left to do:
 [ ] refactor to DRY
 
 
-login isn't validating
-update gem "rack", ">= 2.0.6" per GitHub vulnerability alert
-update gem "loofah", ">= 2.2.3" per GitHub vulnerability alert
+[x] login isn't validating
+[ ] make site links only available if logged in
+[ ] move navigation menu to top
