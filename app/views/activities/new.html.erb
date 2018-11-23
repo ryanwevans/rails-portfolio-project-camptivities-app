@@ -1,5 +1,10 @@
 <h2>Create a New Activity:</h2>
 <br>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<br>
 <div class="fields_with_errors", id="form">
 <%= form_for @activity do |f| %>
   <%= f.label :name, "Activity Name" %>

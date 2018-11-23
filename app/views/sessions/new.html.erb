@@ -2,8 +2,8 @@
 <br>
 
 <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 <p>
   <%= form_for :camp_counselor, url: signin_path, method: :post do |f| %>

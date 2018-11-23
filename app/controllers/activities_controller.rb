@@ -16,13 +16,19 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.create(activity_params)
-    if @activity.save!
+    if @activity.save
       2.times do
         @activity.assignments.create(:activity_id => @activity.id, :filled => false)
       end
       redirect_to activity_path(@activity)
     else
-      redirect_to :new
+      if @activity.name==""
+        flash[:notice] = "Activity Name is required"
+        redirect_to new_activity_path
+      else @activity.description==""
+        flash[:notice] = "Description is required"
+        redirect_to new_activity_path
+      end
     end
   end
 
