@@ -5,9 +5,6 @@ class AssignmentsController < ApplicationController
     if params[:camp_counselor_id]
       @counselor = CampCounselor.find_by(id: params[:camp_counselor_id])
       @assignments = @counselor.assignments
-    elsif params[:activity_id]
-      @activity = Activity.find_by(id: params[:activity_id])
-      @assignments = @activity.assignments.order(:filled)
     else
       @assignments = Assignment.all
     end

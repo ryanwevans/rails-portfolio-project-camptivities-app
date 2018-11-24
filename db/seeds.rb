@@ -24,16 +24,21 @@ DATA = {
     ["Winston Wallis", 13, false, "password"]
   ],
   :activity_keys =>
-   ["name"],
+   ["name", "description"],
   :activities => [
-    ["Bike Riding"],
-    ["Nature Hike"],
-    ["Canoeing"],
-    ["Soccer"],
-    ["Swimming"],
-    ["Go Carts"],
-    ["Volleyball"],
-    ["Arts and Crafts"]
+    ["Bike Riding", "Feel the wind in your hair! This ride will take you through scenic vistas!"],
+    ["Nature Hike", "Get your exercise while winding through country trails along rivers and lakes."],
+    ["Canoeing", "Paddle along the calm shores of a beautiful lake."],
+    ["Soccer", "Feed your competitive side! Run and kick the ball while having fun with your fellow campers!"],
+    ["Swimming", "This isn't just swimming! We have diving platforms and fun toys to play with in the lake!"],
+    ["Go Carts", "Speed along the track and race all your friends to the finish line!"],
+    ["Volleyball", "Keep the ball in the air! Join a team or come as a team with your friends to play!"],
+    ["Arts and Crafts", "Are you creative and artistic? Even if you answered no, this is your opportunity to try and have fun with several different arts and crafts!"],
+    ["Trail Run", "Single track, lots of elevation and the amazing views are the payoff!"],
+    ["Archery", "Test your accuracy with a bow and arrow!"],
+    ["Baking", "Practice your favorite recipes and share them with your fellow campers!"],
+    ["Skateboarding", "These aren't your average skateboards! These are off-road boards that we'll ride down hills!"],
+    ["Waterskiing", "Glide atop the calm waters of the lake at breathtaking speeds! This activity is open to beginners, so come give it a try! You are guaranteed to have a splashing good time!"]
   ]
 }
 

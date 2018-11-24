@@ -58,6 +58,10 @@
  	font-weight: 400;
  }
 
+.field_with_errors input {
+  border: 1px solid red;
+}
+
  .header {
   font: 30px 'Helvetica Neue', Helvetica, Arial, sans-serif;
  	margin: 10px 0 60px 0;
@@ -66,7 +70,7 @@
 	color: #ef6969;
  }
 
- input[type=button], input[type=submit], input[type=reset] {
+ /* input[type=button], input[type=submit], input[type=reset] {
     background-color: #ccd7ea;
     border: none;font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
    	line-height: 1.4em;
@@ -74,7 +78,7 @@
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-}
+} */
 
  textarea {
     width: 100%;

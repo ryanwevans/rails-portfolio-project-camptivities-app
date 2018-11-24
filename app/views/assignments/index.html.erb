@@ -1,38 +1,50 @@
 <% if @counselor %>
   <h2>Assignments for <%= @counselor.name %></h2>
-<% else %>
-  <h2>All Assignments</h2>
-<% end %>
-<br>
-<br>
-<% @assignments.each do |assignment| %>
-  <h3><%= assignment.activity.name %></h3>
-  <em>
-  <% if !assignment.filled %>
-    <%= link_to "This assignment is open", assignment_path(assignment) %>
-  <% end %>
-  </em>
-  <p>
-    <%= assignment.activity.description %>
-    <br>
-    <br>
-    <% if assignment.rating == nil %>
-      <%= form_for assignment do |f| %>
-        <%= f.label :rating, "Rating: " %> 1
-        <%= f.radio_button :rating, '1' %>
-        <%= f.radio_button :rating, '2' %>
-        <%= f.radio_button :rating, '3' %>
-        <%= f.radio_button :rating, '4' %>
-        <%= f.radio_button :rating, '5' %> 5
-        <br>
-        <br>
-        <%= f.submit "Update Assignment" %>
+  <br>
+  <br>
+  <% @assignments.each do |assignment| %>
+    <p>
+      <strong>
+      <%= assignment.activity.name %>
+      </strong>
+      <br>
+      <%= assignment.activity.description %>
+      <br>
+      <br>
+      <% if assignment.rating == nil %>
+        <%= form_for assignment do |f| %>
+          <%= f.label :rating, "Rating: " %> 1
+          <%= f.radio_button :rating, '1' %>
+          <%= f.radio_button :rating, '2' %>
+          <%= f.radio_button :rating, '3' %>
+          <%= f.radio_button :rating, '4' %>
+          <%= f.radio_button :rating, '5' %> 5
+          <br>
+          <br>
+          <%= f.submit "Update Assignment" %>
+        <% end %>
+      <% else %>
+        Fun Rating: <%= assignment.rating %>
       <% end %>
-    <% else %>
-      Fun Rating: <%= assignment.rating %>
-    <% end %>
-    <br>
-    <br>
-    <br>
-  </p>
+      <br>
+      <br>
+      <br>
+    </p>
+  <% end %>
+<% else %>
+  <h2>All Open Assignments</h2>
+  <br>
+  <br>
+  <% @assignments.each do |assignment| %>
+    <p>
+      <strong>
+      <%= assignment.activity.name %>
+      </strong>
+      <br>
+      <%= assignment.activity.description %>
+      <br>
+      <br>
+      <br>
+    </p>
+  <% end %>
 <% end %>
