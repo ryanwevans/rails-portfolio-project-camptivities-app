@@ -63,7 +63,11 @@ def make_activities
     activity.each_with_index do |attribute, i|
       new_activity.send(DATA[:activity_keys][i] + "=", attribute)
     end
-    new_activity.save
+    if new_activity.save
+      2.times do
+        new_activity.assignments.create(:activity_id => new_activity.id, :filled => false)
+      end
+    end
   end
 end
 

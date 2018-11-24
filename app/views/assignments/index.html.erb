@@ -37,14 +37,20 @@
   <br>
   <% @assignments.each do |assignment| %>
     <p>
-      <strong>
-      <%= assignment.activity.name %>
-      </strong>
-      <br>
-      <%= assignment.activity.description %>
-      <br>
-      <br>
-      <br>
+      <% if assignment.filled==false %>
+        <strong>
+        <%= assignment.activity.name %>
+        </strong>
+        <br>
+        <%= assignment.activity.description %>
+        <br>
+        <%= form_for assignment do |f| %>
+        <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
+        <%= f.hidden_field :filled, :value => true %>
+        <%= f.submit "Take this Assignment" %>
+        <% end %>
+        <br>
+      <% end %>
     </p>
   <% end %>
 <% end %>

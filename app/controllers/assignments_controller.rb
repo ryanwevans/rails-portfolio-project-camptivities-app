@@ -32,7 +32,7 @@ class AssignmentsController < ApplicationController
 
   def update
     if @assignment.update(assignment_params)
-      redirect_to @assignment
+      redirect_to camp_counselor_assignments_path(current_user)
     else
       render :edit
     end
