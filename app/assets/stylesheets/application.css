@@ -48,27 +48,59 @@
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
- 	background: #ccd7ea;
+ 	background: #d3d8e2;
  	color: #404040;
  	min-width: 230px;
- 	max-width: 700px;
+ 	max-width: auto;
  	margin: 0 auto;
  	-webkit-font-smoothing: antialiased;
  	-moz-osx-font-smoothing: grayscale;
  	font-weight: 400;
  }
 
-.field_with_errors input {
+ .field_with_errors input {
   border: 1px solid red;
 }
 
  .header {
   font: 30px 'Helvetica Neue', Helvetica, Arial, sans-serif;
- 	margin: 10px 0 60px 0;
+ 	margin: 10px 0px 30px;
 	line-height: 1.4em;
  	text-align: center;
-	color: #ef6969;
+	color: #294cad;
  }
+
+
+  nav {
+  	color: #000000;
+    background: #bac6db;
+  	margin: 10px 0px 30px 0px;
+  	height: 20px;
+  	font-size: 14px;
+  	text-align: center;
+  	font-weight: 400;
+   	min-width: inherit;
+   	max-width: inherit;
+   	padding: 5px 0px 5px 0px;
+    border: 1px solid #e8e1cc;
+  }
+
+  a {
+  	color: inherit;
+  	margin: 3px;
+  	padding: 3px 15px;
+  	text-decoration: none;
+  	border: 1px solid transparent;
+  	border-radius: 3px;
+  }
+
+  a:hover {
+  	color: red;
+  }
+
+  a.selected {
+  	color: red;
+  }
 
  /* input[type=button], input[type=submit], input[type=reset] {
     background-color: #ccd7ea;
@@ -96,6 +128,7 @@
 
  h2 {
  	text-align: center;
+  margin: 30px 0px 10px 0px;
  }
 
  div.notice {
@@ -111,6 +144,9 @@
   /* background: #f5f5f5; */
  	margin: 50px 0 40px 0;
  	position: relative;
+ 	min-width: 230px;
+ 	max-width: 700px;
+ 	margin: 0 auto;
  	/* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), */
  	            /* 0 25px 50px 0 rgba(0, 0, 0, 0.1); */
  }
@@ -126,53 +162,6 @@
  	-webkit-text-rendering: optimizeLegibility;
  	-moz-text-rendering: optimizeLegibility;
  	text-rendering: optimizeLegibility;
- }
-
-
- footer {
- 	color: #000000;
-  /* background: #f5f5f5; */
- 	padding: 30px 0px;
- 	height: 20px;
- 	font-size: 14px;
- 	text-align: center;
- 	font-weight: 400;
- }
-
- .footer_header {
- 	height: 20px;
- 	font-size: 16px;
- 	text-align: center;
- 	padding: 20px 10px 5px 10px;
- 	border-top: 1px solid #e6e6e6;
- 	font-weight: 400;
- }
-
- .footer:before {
- 	content: '';
- 	position: absolute;
- 	right: 0;
- 	bottom: 0;
- 	left: 0;
- 	height: 50px;
- 	overflow: hidden;
- }
-
- a {
- 	color: inherit;
- 	margin: 3px;
- 	padding: 3px 7px;
- 	text-decoration: none;
- 	border: 1px solid transparent;
- 	border-radius: 3px;
- }
-
- a:hover {
- 	color: red;
- }
-
- a.selected {
- 	color: red;
  }
 
 

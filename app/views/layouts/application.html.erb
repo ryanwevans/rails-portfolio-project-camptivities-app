@@ -10,30 +10,26 @@
   </head>
 
   <body>
-		<section class="todoapp">
-			<header class="header">
-        ~ Camptivities ~
-			</header>
-      <%= yield %>
-			<footer>
-        <p class="footer_header">What would you like to do?</p>
-        <% if logged_in? %>
-
-          <% if current_user.admin %>
-            <%= link_to "Create an Activity", new_activity_path %>
-            <%= link_to "Create an Assignment", new_assignment_path %>
-          <% end %>
-          <%= link_to "View All Activities", activities_path %>
-          <%= link_to "View All Assignments", assignments_path %>
-          <br>
-          <%= link_to "View Your Profile", camp_counselor_path(:current_user) %>
-          <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
-          <br>
-          <%= link_to "Log Out", logout_path %>
-          <br>
-          <br>
+		<header class="header">
+      ~ Camptivities ~
+		</header>
+		<nav>
+      <% if logged_in? %>
+        <%= link_to "Activities", activities_path %>
+        <%= link_to "Open Assignments", assignments_path %>
+        <%= link_to "My Profile", camp_counselor_path(:current_user) %>
+        <%= link_to "Edit Profile", edit_camp_counselor_path(:current_user) %>
+        <% if current_user.admin %>
+        <%= link_to "Create Activity", new_activity_path %>
         <% end %>
-			</footer>
-    </section>
+        <em><%= link_to "Log Out", logout_path %></em>
+        <br>
+      <% end %>
+		</nav>
+    <main>
+      <section class="todoapp">
+        <%= yield %>
+      </section>
+    </main>
   </body>
 </html>

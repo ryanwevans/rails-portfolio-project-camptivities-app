@@ -10,21 +10,17 @@
       <br>
       <%= assignment.activity.description %>
       <br>
-      <br>
-      <% if assignment.rating == nil %>
+      <% if assignment.rating == 0 %>
         <%= form_for assignment do |f| %>
-          <%= f.label :rating, "Rating: " %> 1
+          <%= f.submit "Submit Rating" %> 1
           <%= f.radio_button :rating, '1' %>
           <%= f.radio_button :rating, '2' %>
           <%= f.radio_button :rating, '3' %>
           <%= f.radio_button :rating, '4' %>
           <%= f.radio_button :rating, '5' %> 5
-          <br>
-          <br>
-          <%= f.submit "Update Assignment" %>
         <% end %>
       <% else %>
-        Fun Rating: <%= assignment.rating %>
+        <em>Fun Rating: <%= assignment.rating %></em>
       <% end %>
       <br>
       <br>
