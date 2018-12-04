@@ -1,5 +1,11 @@
 <h2>Create Your Camp Counselor Profile:</h2>
 <br>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
 <%= form_for @counselor, html: { autocomplete: "off" } do |f| %>
   <%= f.label :name %>
   <br>

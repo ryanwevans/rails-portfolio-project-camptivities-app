@@ -1,5 +1,11 @@
 <h2>Update <%= @activity.name %> Activity</h2>
 <br>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
 <div class="fields_with_errors", id="form">
   <%= form_for @activity do |f| %>
     <br>
