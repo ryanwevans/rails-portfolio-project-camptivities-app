@@ -23,4 +23,6 @@
 
 <br>
 <br>
-<%= link_to "Edit this Activity", edit_activity_path(@activity) %>
+<% if current_user.admin %>
+  <%= link_to "Edit this Activity", edit_activity_path(@activity) %>
+<% end %>
