@@ -23,7 +23,8 @@ class AssignmentsController < ApplicationController
     if @assignment.save!
       redirect_to assignments_path(@assignment)
     else
-      render :new
+      flash[:notice] = "Unable to Create Assignments for New Activity - Please Try Again"
+      render new_activity_path
     end
   end
 
@@ -34,6 +35,7 @@ class AssignmentsController < ApplicationController
     if @assignment.update(assignment_params)
       redirect_to camp_counselor_assignments_path(current_user)
     else
+      flash[:notice] = "Invalid Entry - Please Try Again"
       render :edit
     end
   end

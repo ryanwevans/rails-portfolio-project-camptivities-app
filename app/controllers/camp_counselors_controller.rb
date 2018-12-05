@@ -12,6 +12,15 @@ class CampCounselorsController < ApplicationController
       session[:user_id] = @counselor.id
       redirect_to camp_counselor_path(@counselor)
     else
+      if @counselor.name==""
+        flash[:notice] = "Invalid Entry - Name Cannot Be Blank"
+      elsif @counselor.email==""
+        flash[:notice] = "Invalid Entry - Email Cannot Be Blank"
+      elsif @counselor.age==""
+        flash[:notice] = "Invalid Entry - Age Cannot Be Blank"
+      elsif @counselor.admin==""
+        flash[:notice] = "Invalid Entry - Admin Cannot Be Blank"
+      end
       render action: :new
     end
   end
@@ -26,6 +35,15 @@ class CampCounselorsController < ApplicationController
     if @counselor.update(counselor_params)
       redirect_to camp_counselor_path(@counselor)
     else
+      if @counselor.name==""
+        flash[:notice] = "Invalid Entry - Name Cannot Be Blank"
+      elsif @counselor.email==""
+        flash[:notice] = "Invalid Entry - Email Cannot Be Blank"
+      elsif @counselor.age==""
+        flash[:notice] = "Invalid Entry - Age Cannot Be Blank"
+      elsif @counselor.admin==""
+        flash[:notice] = "Invalid Entry - Admin Cannot Be Blank"
+      end
       render :edit
     end
   end
