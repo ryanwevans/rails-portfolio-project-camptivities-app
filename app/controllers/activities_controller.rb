@@ -24,11 +24,10 @@ class ActivitiesController < ApplicationController
     else
       if @activity.name==""
         flash[:notice] = "Activity Name is required"
-        redirect_to new_activity_path
       else @activity.description==""
         flash[:notice] = "Description is required"
-        redirect_to new_activity_path
       end
+      redirect_to new_activity_path
     end
   end
 
@@ -39,6 +38,11 @@ class ActivitiesController < ApplicationController
     if @activity.update(activity_params)
       redirect_to @activity
     else
+      if @activity.name==""
+        flash[:notice] = "Activity Name is required"
+      else @activity.description==""
+        flash[:notice] = "Description is required"
+      end
       redirect_to :edit
     end
   end
