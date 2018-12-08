@@ -32,11 +32,11 @@ class AssignmentsController < ApplicationController
   end
 
   def update
-    if @assignment.update(assignment_params)
-      redirect_to camp_counselor_assignments_path(current_user)
-    else
+    if params[:assignment]==nil
       flash[:notice] = "Invalid Entry - Please Try Again"
-      render :edit
+      redirect_to camp_counselor_assignments_path(current_user)
+    elsif @assignment.update(assignment_params)
+      redirect_to camp_counselor_assignments_path(current_user)
     end
   end
 

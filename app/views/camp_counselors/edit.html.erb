@@ -5,8 +5,6 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-
-<div class="fields_with_errors", id="form">
 <%= form_for @counselor, html: { autocomplete: "off" } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -24,4 +22,3 @@
   <br><br>
   <%= f.submit "Update Profile" %>
 <% end %>
-</div>

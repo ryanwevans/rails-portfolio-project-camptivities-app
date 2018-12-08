@@ -10,6 +10,7 @@
       <br>
       <%= assignment.activity.description %>
       <br>
+
       <% if assignment.rating == 0 %>
         <%= form_for assignment do |f| %>
           <%= f.submit "Submit Rating" %> 1
@@ -22,6 +23,7 @@
       <% else %>
         <em>Fun Rating: <%= assignment.rating %></em>
       <% end %>
+      
       <br>
       <br>
       <br>
