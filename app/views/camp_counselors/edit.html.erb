@@ -5,20 +5,4 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<%= form_for @counselor, html: { autocomplete: "off" } do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <br>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-  <br>
-  <br>
-  <%= f.label(:admin, "Camp Admin") %><br>
-  <%= f.radio_button(:admin, true) %>Yes
-  <%= f.radio_button(:admin, false) %>No
-  <br><br>
-  <%= f.submit "Update Profile" %>
-<% end %>
+<%= render partial: 'form', locals: {counselor: @counselor} %>

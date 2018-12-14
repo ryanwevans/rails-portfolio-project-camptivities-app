@@ -1,0 +1,32 @@
+<%= form_for counselor do |f| %>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :email %>
+  <br>
+  <%= f.text_field :email %>
+  <br>
+  <br>
+  <%= f.label :age %>
+  <br>
+  <%= f.text_field :age %>
+  <br>
+  <br>
+  <%= f.label(:admin, "Camp Admin") %><br>
+  <%= f.radio_button(:admin, true) %>Yes
+  <%= f.radio_button(:admin, false) %>No
+  <br>
+  <br>
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.label :password_confirmation %>
+  <br>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <br>
+  <%= f.submit "Create Profile" %>
+<% end %>
