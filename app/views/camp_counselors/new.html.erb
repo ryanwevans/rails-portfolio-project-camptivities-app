@@ -1,9 +1,6 @@
 <h2>Create Your Camp Counselor Profile:</h2>
 <br>
 
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
+<%= render partial: 'layouts/flash_notice' %>
 
 <%= render partial: 'new_counselor', locals: {counselor: @counselor} %>

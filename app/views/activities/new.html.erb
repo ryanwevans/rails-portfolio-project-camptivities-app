@@ -1,10 +1,7 @@
 <h2>Create a New Activity:</h2>
 <br>
 
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
+<%= render partial: 'layouts/flash_notice' %>
 
 <br>
 <div class="fields_with_errors", id="form">
