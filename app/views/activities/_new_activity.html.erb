@@ -1,0 +1,10 @@
+<%= form_for activity do |f| %>
+  <%= f.label :name, "Activity Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description, "Description" %>
+  <br>
+  <%= f.text_area :description, size: "50x10" %>
+  <br>
+  <%= f.submit "Create Activity" %>
+<% end %>
