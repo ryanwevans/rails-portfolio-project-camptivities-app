@@ -9,6 +9,4 @@
 
 <br>
 
-<% if @current_user.admin %>
-  <%= link_to "Delete Activity", @activity, method: :delete, data: { confirm: "Delete This Activity?" } %>
-<% end %>
+<%= activity_admin_links %>
