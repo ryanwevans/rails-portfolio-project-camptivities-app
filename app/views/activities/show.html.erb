@@ -7,11 +7,7 @@
   <br>
 </p>
 <br>
-<% @assignments.each do |assignment| %>
-  <em>
-    <%= activity_assignment_availability %>
-  </em>
-<% end %>
+<%= render partial: 'activity_availability', locals: {assignments: @assignments} %>
 <br>
 <br>
 <%= activity_edit_link %>

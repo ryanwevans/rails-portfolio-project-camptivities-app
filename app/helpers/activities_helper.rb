@@ -11,23 +11,4 @@ module ActivitiesHelper
     end
   end
 
-  def activity_assignment_availability
-    if @assignment.filled
-      "One assignment is full"
-    else
-      "This assignment is still open"
-      form_for @assignment do |f|
-      f.hidden_field :camp_counselor_id, :value => current_user.id
-      f.hidden_field :filled, :value => true
-      f.submit "Signup to Oversee This Activity!"
-      end
-    end
-  end
-  
 end
-
-# if !assignment.filled
-#   link_to "Sign Up For This Assignment", assignment_path(assignment)
-# else
-#   "One Assignment is Full"
-# end
