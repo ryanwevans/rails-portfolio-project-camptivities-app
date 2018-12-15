@@ -9,16 +9,9 @@
 <br>
 <% @assignments.each do |assignment| %>
   <em>
-  <% if !assignment.filled %>
-    <%= link_to "Sign Up For This Assignment", assignment_path(assignment) %>
-    <br>
-  <% else %>
-    <%= "One Assignment is Full" %>
-    <br>
-  <% end %>
+    <%= activity_assignment_availability %>
   </em>
 <% end %>
-
 <br>
 <br>
 <%= activity_edit_link %>

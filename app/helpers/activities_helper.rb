@@ -10,4 +10,12 @@ module ActivitiesHelper
       link_to "Edit this Activity", edit_activity_path(@activity)
     end
   end
+
+  def activity_assignment_availability
+    if !assignment.filled
+      link_to "Sign Up For This Assignment", assignment_path(assignment)
+    else
+      "One Assignment is Full"
+    end
+  end
 end
