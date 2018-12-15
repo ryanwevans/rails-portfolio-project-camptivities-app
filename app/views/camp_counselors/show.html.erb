@@ -1,18 +1,3 @@
 <h2>Camp Counselor Profile Page</h2>
 <br>
-<h3><%= @counselor.name %></h3>
-<br>
-<p>
-  Email: <%= @counselor.email %>
-  <br>
-  <br>
-  Age: <%= @counselor.age %> years old
-  <br>
-  <br>
-  <% if @counselor.admin %>
-    <em><%= "You have a Camp Admin account" %></em>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to "View All Your Assignments", camp_counselor_assignments_path(@counselor) %>
-</p>
+<%= render partial: 'counselor', locals: {counselor: @counselor}
