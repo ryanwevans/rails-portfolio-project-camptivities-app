@@ -7,8 +7,6 @@
   <br>
 </p>
 <br>
-<%= @activity.assignments.length %>
-<br>
 <% @assignments.each do |assignment| %>
   <em>
   <% if !assignment.filled %>
@@ -23,6 +21,4 @@
 
 <br>
 <br>
-<% if current_user.admin %>
-  <%= link_to "Edit this Activity", edit_activity_path(@activity) %>
-<% end %>
+<%= activity_edit_link %>
