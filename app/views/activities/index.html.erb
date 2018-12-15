@@ -1,14 +1,3 @@
 <h2>Camp Activities</h2>
 <br>
-<% @activities.each do |activity| %>
-  <p>
-    <strong>
-    <%= link_to "#{activity.name}", activity_path(activity) %>
-    </strong>
-    <br>
-    <%= activity.description %>
-    <br>
-    <br>
-    <br>
-  </p>
-<% end %>
+<%= render partial: 'activity_list', locals: {activities: @activities} %>

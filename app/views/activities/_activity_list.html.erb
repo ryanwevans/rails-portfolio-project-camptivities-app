@@ -1,0 +1,12 @@
+<% activities.each do |activity| %>
+  <p>
+    <strong>
+    <%= link_to "#{activity.name}", activity_path(activity) %>
+    </strong>
+    <br>
+    <%= activity.description %>
+    <br>
+    <br>
+    <br>
+  </p>
+<% end %>
