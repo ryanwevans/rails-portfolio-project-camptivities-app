@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :assignments
 
+  get '/auth/facebook/callback' => 'sessions#create'
+
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

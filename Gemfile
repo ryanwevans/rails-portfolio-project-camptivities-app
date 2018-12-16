@@ -5,6 +5,8 @@ ruby '2.5.3'
 
 gem "rack", ">= 2.0.6"
 gem "loofah", ">= 2.2.3"
+# Used to mock an https url
+gem 'thin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
@@ -32,8 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 
 gem 'omniauth'
-gem 'omniauth-google'
-gem 'omniauth-github'
 gem 'omniauth-facebook'
 
 gem 'dotenv-rails'
