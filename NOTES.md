@@ -7,7 +7,7 @@ Tasks left to do:
 [x] add display of form validation errors
 [x] error messages describing the validation failures must be present within the view (edit and new for all controllers/models)
 [x] be sure to utilize the nested resources
-[ ] add OmniAuth Facebook login
+[x] add OmniAuth Facebook login
 [ ] add OmniAuth Google login?
 [ ] add OmniAuth GitHub login?
 [x] refactor to DRY
@@ -19,3 +19,4 @@ Tasks left to do:
 [x] login isn't validating
 [x] make site links only available if logged in
 [x] move navigation menu to top
+[x] add confirmation popup when deleting counselor account

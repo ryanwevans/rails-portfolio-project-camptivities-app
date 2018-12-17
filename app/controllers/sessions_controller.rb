@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       u.password_digest = auth['uid']
       end
       session[:user_id] = counselor.id
-      redirect_to edit_camp_counselor_path(counselor)
+      redirect_to camp_counselor_path(counselor)
     else
       flash[:notice] = "Please Try Again"
       redirect_to signin_path

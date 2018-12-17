@@ -10,3 +10,7 @@
   <br>
   <%= f.submit "Update Activity" %>
 <% end %>
+<br>
+<%= form_for :activity, url: activity_path, method: :delete, data: {confirm: "Are You Sure You Want to Delete This Activity?"} do |f| %>
+<%= f.submit "Delete Activity" %>
+<% end %>
