@@ -50,7 +50,7 @@ class CampCounselorsController < ApplicationController
 
   def destroy
     @counselor.destroy
-    redirect_to new_camp_counselor_path
+    redirect_to signin_path
   end
 
 

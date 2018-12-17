@@ -15,3 +15,7 @@
   <br><br>
   <%= f.submit %>
 <% end %>
+
+<%= form_for :camp_counselor, url: camp_counselor_path, method: :delete do |f| %>
+<%= f.submit "Delete Account" %>
+<% end %>
