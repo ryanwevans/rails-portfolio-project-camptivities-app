@@ -7,7 +7,7 @@ Flatiron School Rails portfolio project by Ryan Evans
 
 
 
-#Usage
+# USAGE
 _______________________________________________________________________________________________________________
 - After cloning the repo, run bundle to install dependencies.
 - To migrate your local database, run 'rake db:migrate'.
@@ -19,12 +19,12 @@ ________________________________________________________________________________
 
 
 
-#Contributing
+# CONTRIBUTING
 _______________________________________________________________________________________________________________
 -Bug reports and pull requests are welcome on GitHub at https://github.com/ryanwevans/rails-portfolio-project-camptivities-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 
 
-#License
+# LICENSE
 _______________________________________________________________________________________________________________
 The gem is available as open source under the terms of the MIT License (http://opensource.org/licenses/MIT).
