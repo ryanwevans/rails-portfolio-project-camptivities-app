@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Portfolio Project - Camptivities
+_______________________________________________________________________________________________________________
 
-Things you may want to cover:
+Flatiron School Rails portfolio project by Ryan Evans
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+#Usage
+_______________________________________________________________________________________________________________
+- After cloning the repo, run bundle to install dependencies.
+- To migrate your local database, run 'rake db:migrate'.
+- Run 'rake db:seed' to load seed data for Counselors and Activities.
+- Facebook login requires a secure connection, so to start the application, run 'thin start --ssl' from the application root folder.
+- In a browser, go to https://localhost:3000/ to begin.
 
-* Database creation
+- You can start the application (without Facebook login capabilities) by running 'rails s' from the application root folder. Then in a browser, go to http://localhost:3000/ to begin.
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+#Contributing
+_______________________________________________________________________________________________________________
+-Bug reports and pull requests are welcome on GitHub at https://github.com/ryanwevans/rails-portfolio-project-camptivities-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Deployment instructions
 
-* ...
+
+#License
+_______________________________________________________________________________________________________________
+The gem is available as open source under the terms of the MIT License (http://opensource.org/licenses/MIT).

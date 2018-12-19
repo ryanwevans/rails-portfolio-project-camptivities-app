@@ -40,7 +40,6 @@
  body {
  	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
  	line-height: 1.4em;
-  /* background-image: url('markus-spiske-1085949-unsplash.png'); */
   background-repeat: no-repeat;
   background-position: 50% 0;
   -ms-background-size: cover;
@@ -116,16 +115,6 @@
   a.selected {
   	color: red;
   }
-
- /* input[type=button], input[type=submit], input[type=reset] {
-    background-color: #ccd7ea;
-    border: none;font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   	line-height: 1.4em;
-   	color: #404040;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-} */
 
  textarea {
     width: 100%;
