@@ -1,6 +1,4 @@
-## README
-
-**Rails Portfolio Project - Camptivities**
+## Rails Portfolio Project - Camptivities
 
 Flatiron School Rails portfolio project by Ryan Evans
 
