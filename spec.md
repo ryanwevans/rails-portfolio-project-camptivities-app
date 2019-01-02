@@ -11,7 +11,8 @@ Specs:
   + *Assignment belongs_to Activities, Assignment belongs_to CampCounselor*
 
 - [ ] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
-  + *Activity has_many CampCounselors through Assignments, CampCounselor has_many Activities through Assignments*
+  + *Add Comments model: CampCounselor has_many Comments through Activities*
+  + *Add Camps model: Camp has_many CampCounselors through Activities*
 
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
   + *Activity has_many CampCounselors through Assignments, CampCounselor has_many Activities through Assignments*
@@ -44,6 +45,7 @@ Specs:
   + *camp_counselors/:id/activities*
 
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+  + *Add: activity/:id/comment/new*
 
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
   + */activities/new*
