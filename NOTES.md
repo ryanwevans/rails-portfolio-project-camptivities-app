@@ -32,22 +32,3 @@ Tasks left to do:
   [ ] add resources and nested resources to routes.rb
 
 [ ] improve page layouts (include Camp name, sub-text description of site beneath Header)
-
-
-
-```Ignoring ffi-1.9.25 because its extensions are not built. Try: gem pristine ffi --version 1.9.25
-Ignoring oj-2.18.5 because its extensions are not built. Try: gem pristine oj --version 2.18.5
-Ignoring ffi-1.9.25 because its extensions are not built. Try: gem pristine ffi --version 1.9.25
-Ignoring oj-2.18.5 because its extensions are not built. Try: gem pristine oj --version 2.18.5
-Traceback (most recent call last):
-	9: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/bin/learn-test:23:in `<main>'
-	8: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/bin/learn-test:23:in `load'
-	7: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/gems/learn-test-2.6.1/bin/learn-test:4:in `<top (required)>'
-	6: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/gems/learn-test-2.6.1/bin/learn-test:4:in `require_relative'
-	5: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/gems/learn-test-2.6.1/lib/learn_test.rb:2:in `<top (required)>'
-	4: from /usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:122:in `require'
-	3: from /usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:122:in `require'
-	2: from /Users/ryanevans/.rvm/gems/ruby-2.5.3/gems/oj-2.18.5/lib/oj.rb:43:in `<top (required)>'
-	1: from /usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:122:in `require'
-/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:122:in `require': incompatible library version - /Users/ryanevans/.rvm/gems/ruby-2.5.3/gems/oj-2.18.5/lib/oj/oj.bundle (LoadError)
-```
