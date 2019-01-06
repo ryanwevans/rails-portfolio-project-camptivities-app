@@ -6,9 +6,19 @@ Rails.application.routes.draw do
     resources :assignments, only: [:show, :index]
   end
 
+  resources :camp_counselors, shallow: true do
+    resources :comments
+  end
+
   resources :activities do
     resources :assignments
   end
+
+  resources :activities, shallow: true do
+    resources :comments
+  end
+
+  resources :camps
 
   resources :assignments
 
