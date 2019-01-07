@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_07_024813) do
+ActiveRecord::Schema.define(version: 2019_01_07_031249) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 2019_01_07_024813) do
 
   create_table "camp_counselors", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "age"
     t.string "uid"
     t.string "provider"
     t.string "email"
     t.boolean "admin"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "camps", force: :cascade do |t|
@@ -52,13 +52,11 @@ ActiveRecord::Schema.define(version: 2019_01_07_024813) do
 
   create_table "comments", force: :cascade do |t|
     t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "content"
     t.integer "camp_counselor_id"
     t.integer "activity_id"
-    t.index ["activity_id"], name: "index_comments_on_activity_id"
-    t.index ["camp_counselor_id"], name: "index_comments_on_camp_counselor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -54,16 +54,7 @@ DATA = {
 def main
   make_camp_counselors
   make_activities
-end
-
-def make_camps
-  DATA[:camps].each do |camp|
-    new_camp = Camp.new
-    camp.each_with_index do |attribute, i|
-      new_camp.send(DATA[:camp_keys][i]+"=", attribute)
-    end
-    new_camp.save
-  end
+  make_camps
 end
 
 def make_camp_counselors
@@ -80,13 +71,23 @@ def make_activities
   DATA[:activities].each do |activity|
     new_activity = Activity.new
     activity.each_with_index do |attribute, i|
-      new_activity.send(DATA[:activity_keys][i] + "=", attribute)
+      new_activity.send(DATA[:activity_keys][i]+"=", attribute)
     end
     if new_activity.save
       2.times do
         new_activity.assignments.create(:activity_id => new_activity.id, :filled => false, :rating => 0)
       end
     end
+  end
+end
+
+def make_camps
+  DATA[:camps].each do |camp|
+    new_camp = Camp.new
+    camp.each_with_index do |attribute, i|
+      new_camp.send(DATA[:camp_keys][i]+"=", attribute)
+    end
+    new_camp.save
   end
 end
 
