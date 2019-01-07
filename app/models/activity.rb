@@ -9,4 +9,6 @@ class Activity < ApplicationRecord
 
   has_many :comments
   has_many :camp_counselors, through: :comments
+
+  belongs_to :camp
 end
