@@ -24,8 +24,10 @@ class ActivitiesController < ApplicationController
     else
       if @activity.name==""
         flash[:notice] = "Activity Name is required"
-      else @activity.description==""
+      elsif @activity.description==""
         flash[:notice] = "Description is required"
+      elsif @activity.camp_id==""
+        flash[:notice] = "Camp Name is required"
       end
       redirect_to new_activity_path
     end
