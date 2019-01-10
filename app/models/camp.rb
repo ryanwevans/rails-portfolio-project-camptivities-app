@@ -3,4 +3,7 @@ class Camp < ApplicationRecord
 
   has_many :activities
   has_many :camp_counselors, through: :activities
+
+  # accepts_nested_attributes_for :activities
+
 end
