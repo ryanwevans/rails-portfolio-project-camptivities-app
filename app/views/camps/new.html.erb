@@ -1,0 +1,9 @@
+<h2>Add a New Camp:</h2>
+<br>
+
+<%= render partial: 'layouts/flash_notice' %>
+
+<br>
+<div class="fields_with_errors", id="form">
+  <%= render partial: 'new_camp', locals: {camp: @camp} %>
+</div>
