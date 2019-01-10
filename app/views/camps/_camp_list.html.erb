@@ -1,0 +1,10 @@
+<% camps.each do |camp| %>
+  <p>
+    <strong>
+    <%= link_to "#{camp.name}", camp_path(camp) %>
+    </strong>
+    <br>
+    <br>
+    <br>
+  </p>
+<% end %>

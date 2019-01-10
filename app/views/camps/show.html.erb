@@ -1,0 +1,15 @@
+<h2><%= @camp.name %></h2>
+<br>
+<%= @camp.activities.each do |activity| %>
+  <h3><%= activity.name %></h3>
+  <p>
+    <br>
+    Fun Rating: <%= activity.assignments.average(:rating) %>
+    <br>
+  </p>
+  <br>
+  <%= render partial: 'activity_availability', locals: {assignments: @assignments} %>
+  <br>
+  <br>
+  <%= activity_edit_link %>
+<% end %>
