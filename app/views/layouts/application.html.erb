@@ -15,10 +15,10 @@
 		</header>
 		<nav>
       <% if logged_in? %>
+        <%= link_to "Camps", camps_path %>
         <%= link_to "Activities", activities_path %>
-        <%= link_to "Open Assignments", assignments_path %>
+        <%= link_to "Assignments", assignments_path %>
         <%= link_to "My Profile", camp_counselor_path(:current_user) %>
-        <%= link_to "Edit Profile", edit_camp_counselor_path(:current_user) %>
         <% if current_user.admin %>
         <%= link_to "Create Activity", new_activity_path %>
         <% end %>
