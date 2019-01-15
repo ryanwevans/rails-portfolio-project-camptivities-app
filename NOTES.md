@@ -24,13 +24,14 @@ Tasks left to do:
   [x] add camp seed data
   [x] add resources and nested resources to routes.rb
   [x] add Camp index page
-    [ ] add Description and Location to Camp table
-    [ ] add Description and Location to Camp index and show pages
+    [x] add Description and Location to Camp table
+    [x] add Description and Location to Camp index and show pages
     [ ] add link to Camps index in nav bar
-    [ ] link each Camp to it's show page
-    [ ] Camp show page contains links to each of the Camp Activities indexed
+    [x] link each Camp to it's show page
+    [x] Camp show page contains links to each of the Camp Activities indexed
         -this should look/be the same as the CampCounselor/Activities page
-        -include form to sign-up for Activity or link to the Activity show page
+        -include form to sign-up for Activity
+        -link to the Activity show page
   [ ] add/choose Camp name in new Activity form for admin users
   [ ] add Camp name to each Activity on Activities index page and on show page
     [ ] sort Activities index (all) page by Camp
