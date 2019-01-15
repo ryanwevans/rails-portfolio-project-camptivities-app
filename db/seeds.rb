@@ -20,17 +20,17 @@ DATA = {
     ["Camp Boundary Waters"],
   ],
   :camp_counselor_keys =>
-    ["name", "age", "admin", "password"],
+    ["name", "age", "email", "admin", "password"],
   :camp_counselors => [
-    ["Max Charles", 32, true, "password"],
-    ["Skai Jackson", 10, false, "password"],
-    ["Kaleo Elam", 15, false, "password"],
-    ["Megan Carpenter", 12, false, "password"],
-    ["Hayden Byerly", 58, true, "password"],
-    ["Tenzing Norgay", 55, true, "password"],
-    ["Davis Cleveland", 18, true, "password"],
-    ["Cole Sand", 13, false, "password"],
-    ["Winston Wallis", 13, false, "password"]
+    ["Max Charles", "max@max.com", 32, true, "password"],
+    ["Skai Jackson", "skai@skai.com", 10, false, "password"],
+    ["Kaleo Elam", "kaleo@kaleo.com", 15, false, "password"],
+    ["Megan Carpenter", "megan@megan.com", 12, false, "password"],
+    ["Hayden Byerly", "hayden@hayden.com", 58, true, "password"],
+    ["Tenzing Norgay", "tenzing@tenzing.com", 55, true, "password"],
+    ["Davis Cleveland", "davis@davis.com", 18, true, "password"],
+    ["Cole Sand", "cole@cole.com", 13, false, "password"],
+    ["Winston Wallis", "winston@winston.com", 13, false, "password"]
   ],
   :activity_keys =>
    ["name", "description", "camp_id"],
@@ -53,8 +53,8 @@ DATA = {
 
 def main
   make_camp_counselors
-  make_activities
   make_camps
+  make_activities
 end
 
 def make_camp_counselors
