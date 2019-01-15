@@ -4,7 +4,7 @@
 <br>
 <%= @camp.description %>
 <br>
-<%= @camp.activities.each do |activity| %>
+<% @camp.activities.each do |activity| %>
   <p>
     <%= link_to activity.name, activity_path %>
     <br>
