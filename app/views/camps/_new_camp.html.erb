@@ -2,20 +2,11 @@
   <%= f.label :name, "Camp Name" %>
   <%= f.text_field :name %>
   <br>
+  <%= f.label :location, "Location" %>
+  <%= f.text_field :location %>
   <br>
-  <br>
-  Add Activity:
-  <br>
-  <br>
-    <%= f.fields_for :activity do |activity_form| %>
-      <%= activities_form.label :name %>
-      <%= activities_form.text_field :name %>
-
-      <%= activities_form.hidden_field :camp_id, value: "camp.id" %>
-      <br>
-      <%= activities_form.label :description %>
-      <%= activities_form.text_field :description, size: "50x10" %>
-    <% end %>
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %>
   <br>
   <br>
   <%= f.submit "Add Camp" %>

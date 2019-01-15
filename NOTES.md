@@ -23,13 +23,16 @@ Tasks left to do:
   [x] add camp_id to activities table
   [x] add camp seed data
   [x] add resources and nested resources to routes.rb
-  [ ] add Camp index page
-    [ ] link each Camp to the show page
+  [x] add Camp index page
+    [ ] add Description and Location to Camp table
+    [ ] add Description and Location to Camp index and show pages
+    [ ] add link to Camps index in nav bar
+    [ ] link each Camp to it's show page
     [ ] Camp show page contains links to each of the Camp Activities indexed
         -this should look/be the same as the CampCounselor/Activities page
-        -include form to sign-up for that
+        -include form to sign-up for Activity or link to the Activity show page
   [ ] add/choose Camp name in new Activity form for admin users
-  [ ] add Camp name to each Activity on Activities index page
+  [ ] add Camp name to each Activity on Activities index page and on show page
     [ ] sort Activities index (all) page by Camp
   [ ] add Camp name to each Activity on CampCounselor/:id/Activities page
     [ ] sort CampCounselor/:id/Activities index page by camp
@@ -40,7 +43,6 @@ Tasks left to do:
   [ ] view most recent comment for each activity on Activities index page
   [x] add resources and nested resources to routes.rb
 
-[ ] Activity new page isn't creating a new Activity without a Camp assignment.  Returns error that 'description is required' because it's that last error logged
 
 [ ] improve page layouts (include Camp name, sub-text description of site beneath Header)
 
