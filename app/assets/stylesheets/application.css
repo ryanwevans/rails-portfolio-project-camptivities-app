@@ -108,12 +108,31 @@
   	border: 1px solid transparent;
   }
 
+  p.linkstyle {
+  	color: inherit;
+  	margin: 3px;
+  	text-decoration: none;
+    text-transform: uppercase;
+  	font-size: 14px;
+  	font-weight: 500;
+  	border: 1px solid transparent;
+  }
+
   a:hover {
   	color: red;
   }
 
   a.selected {
   	color: red;
+  }
+
+  .linkstyle {
+    color: inherit;
+  	margin: 3px;
+  	text-decoration: none;
+    text-transform: uppercase;
+  	font-size: 14px;
+  	font-weight: 400;
   }
 
  textarea {
