@@ -3,14 +3,15 @@
   <br>
   <br>
   <% assignments.each do |assignment| %>
-    <p>
+    <div class="linkstyle">
+      <h3 style="font-weight:500;"><%= assignment.activity.name %></h3>
+      </div>
+      <p>
       <strong>
-      <%= assignment.activity.name %>
+        <%= assignment.activity.description %>
       </strong>
       <br>
-      <%= assignment.activity.description %>
       <br>
-
       <% if assignment.rating == 0 %>
         <%= form_for assignment do |f| %>
           <%= f.submit "Submit Rating" %> 1
@@ -23,7 +24,6 @@
       <% else %>
         <em>Fun Rating: <%= assignment.rating %></em>
       <% end %>
-
       <br>
       <br>
       <br>
@@ -34,13 +34,13 @@
   <br>
   <br>
   <% assignments.each do |assignment| %>
-    <p>
       <% if assignment.filled==false %>
-        <strong>
-        <%= assignment.activity.name %>
-        </strong>
+        <div class="linkstyle">
+        <strong><%= assignment.activity.name %></strong>
+        </div>
+        <p>
+          <%= assignment.activity.description %>
         <br>
-        <%= assignment.activity.description %>
         <br>
         <%= form_for assignment do |f| %>
         <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
@@ -48,7 +48,9 @@
         <%= f.submit "Take this Assignment" %>
         <% end %>
         <br>
+        <br>
+        <br>
+      </p>
       <% end %>
-    </p>
   <% end %>
 <% end %>
