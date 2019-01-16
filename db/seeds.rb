@@ -11,13 +11,13 @@
 
 DATA = {
   :camp_keys =>
-    ["name"],
+    ["name", "location", "description"],
   :camps => [
-    ["Camp Chautaugua"],
-    ["Camp Adirondack"],
-    ["Mt. Baker Camp"],
-    ["Camp Snoqualmie"],
-    ["Camp Boundary Waters"],
+    ["Camp Chautaugua", "Upstate New York", "Exclusive 1950's era family resort for those with high-end tastes"],
+    ["Camp Adirondack", "New York State", "Nestled on a tranquil lake in the Adirondack Mountains of upstate New York"],
+    ["Mt. Baker Camp", "Mt. Baker Ski Area", "When the ski season is over, we have endless hiking trails, climbing, and star-gazing"],
+    ["Camp Snoqualmie", "Glacier, Washington", "With several lakes in the area, we focus on water sports and activities"],
+    ["Camp Boundary Waters", "Northern Minnesota", "In the land of ten thousand lakes, we have so many that we spend days canoeing and kayaking and nights camping under the clear Minnesota skies"],
   ],
   :camp_counselor_keys =>
     ["name", "age", "email", "admin", "password"],
