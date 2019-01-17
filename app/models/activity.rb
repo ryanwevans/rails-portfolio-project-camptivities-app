@@ -16,7 +16,7 @@ class Activity < ApplicationRecord
   belongs_to :camp
 
   has_many :assignments
-  has_many :camp_counselors, through :assignments
+  has_many :camp_counselors, through: :assignments
 
   has_many :comments
 
