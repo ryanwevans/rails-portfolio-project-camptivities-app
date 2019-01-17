@@ -3,7 +3,7 @@ class CreateActivities < ActiveRecord::Migration[5.2]
     create_table :activities do |t|
       t.string :name
       t.text :description
-      t.integer :camp_id
+      t.belongs_to :camp, index: true, foreign_key: true
 
       t.timestamps null: false
     end

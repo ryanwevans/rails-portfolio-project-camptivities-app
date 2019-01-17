@@ -7,7 +7,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
       t.belongs_to :camp_counselor, index: true, foreign_key: true
       t.belongs_to :activity, index: true, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
