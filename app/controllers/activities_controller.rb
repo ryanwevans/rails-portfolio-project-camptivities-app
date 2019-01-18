@@ -12,6 +12,9 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    if params[:camp_id]
+      @camp = Camp.find_by(id: params[:camp_id])
+    end
     @activity = Activity.new
   end
 
