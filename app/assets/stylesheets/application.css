@@ -154,6 +154,10 @@
   margin: 30px 0px 10px 0px;
  }
 
+ div.subtext {
+  text-align: center;
+ }
+
  div.notice {
    color: red;
    font-style: italic;

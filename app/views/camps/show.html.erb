@@ -1,13 +1,12 @@
-<h2><%= @camp.name %></h2>
+<h2><%= @camp.name %> Activities</h2>
 <br>
 <div class="subtext">
-<%= @camp.location %>
-<br>
+<h3><%= @camp.location %></h3>
 <%= @camp.description %>
-</div>
+<br>
 <br>
 <%= link_to "Add New Activity", new_camp_activity_path(@camp) %>
-<br>
+</div>
 <br>
 <% @camp.activities.each do |activity| %>
   <p>
