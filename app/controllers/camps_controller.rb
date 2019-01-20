@@ -20,13 +20,13 @@ class CampsController < ApplicationController
       redirect_to camp_path(@camp)
     else
       if @camp.name==""
-        flash[:notice] = "Invalid Entry - Name Cannot be Blank"
+        flash[:notice] = "Camp Name is required"
       elsif @camp.location==""
-        flash[:notice] = "Invalid Entry - Location Cannot be Blank"
+        flash[:notice] = "Location is required"
       elsif @camp.description==""
-        flash[:notice] = "Invalid Entry - Description Cannot be Blank"
+        flash[:notice] = "Description is required"
       end
-      render action: :new
+      redirect_to new_camp_path
     end
   end
 
