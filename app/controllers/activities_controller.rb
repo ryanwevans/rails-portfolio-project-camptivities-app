@@ -2,12 +2,15 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activity.all.order(:camp_id)
-    @camps = Camp.all
+    if params[:camp_id]
+      @camp = Camp.find_by(id: params[:camp_id])
+    else
+      @camps = Camp.all
+    end
+    # @activities = Activity.all.order(:camp_id)
   end
 
   def show
-    @assignment = @activity.assignments.where("camp_counselor_id=?", @current_user.id)
     @assignments = @activity.assignments.order(:filled)
   end
 
