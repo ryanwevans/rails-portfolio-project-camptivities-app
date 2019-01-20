@@ -3,7 +3,9 @@
 <div class="subtext">
 <h3><%= @camp.location %></h3>
 <%= @camp.description %>
-<br>
-<br>
-<%= link_to "View #{@camp.name} Activities", camp_activities_path(@camp) %>
 </div>
+<br>
+<br>
+<p style="text-align:center;">
+  <%= link_to "View #{@camp.name} Activities", camp_activities_path(@camp) %>
+</p>
