@@ -1,3 +1,11 @@
-<h2>Activities</h2>
+<% if @camp %>
+  <h2><%= @camp.name %> Activities</h2>
+<% else %>
+  <h2>Activities</h2>
+<% end %>
 <br>
-<%= render partial: 'activity_list', locals: {activities: @activities} %>
+<br>
+<%= link_to "Add New Activity", new_camp_activity_path(@camp) %>
+<br>
+<br>
+<%= render partial: 'activity_list', locals: {activities: @activities, camp: @camp, camps: @camps} %>

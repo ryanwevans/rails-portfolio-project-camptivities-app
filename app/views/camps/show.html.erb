@@ -1,24 +1,9 @@
-<h2><%= @camp.name %> Activities</h2>
+<h2><%= @camp.name %></h2>
 <br>
 <div class="subtext">
 <h3><%= @camp.location %></h3>
 <%= @camp.description %>
 <br>
 <br>
-<%= link_to "Add New Activity", new_camp_activity_path(@camp) %>
+<%= link_to "View #{@camp.name} Activities", camp_activities_path(@camp) %>
 </div>
-<br>
-<% @camp.activities.each do |activity| %>
-  <p>
-    <%= link_to activity.name, activity_path %>
-    <br>
-    <br>
-    <%= activity.description %>
-    <br>
-    Fun Rating: <%= activity.assignments.average(:rating) %>
-    <br>
-  </p>
-  <%= render partial: 'activities/activity_availability', locals: {assignments: activity.assignments} %>
-  <br>
-  <br>
-<% end %>

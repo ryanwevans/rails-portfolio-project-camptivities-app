@@ -1,15 +1,15 @@
 <h3><%= counselor.name %></h3>
 
-<% if counselor.admin %>
-  <em><%= "You have a Camp Admin account" %></em>
-<% end %>
-<br>
-<br>
 <p>
   Email: <%= counselor.email %>
   <br>
   Age: <%= counselor.age %>
   <br>
+  <br>
+  <br>
+  <% if counselor.admin %>
+  <em><%= "You have a Camp Admin account" %></em>
+  <% end %>
   <br>
   <br>
   <%= link_to "View All Your Assignments", camp_counselor_assignments_path(counselor) %>

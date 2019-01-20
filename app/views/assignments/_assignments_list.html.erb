@@ -30,17 +30,16 @@
     </p>
   <% end %>
 <% else %>
-  <h2>All Open Assignments</h2>
+  <h2>All Assignments</h2>
   <br>
   <br>
   <% assignments.each do |assignment| %>
       <% if assignment.filled==false %>
         <div class="linkstyle">
-        <strong><%= assignment.activity.name %></strong>
+        <%= assignment.activity.name %>
         </div>
         <p>
           <%= assignment.activity.description %>
-        <br>
         <br>
         <%= form_for assignment do |f| %>
         <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
