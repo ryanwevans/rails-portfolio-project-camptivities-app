@@ -22,6 +22,33 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    create_logic
+  end
+
+  def edit
+  end
+
+  def update
+    update_logic
+  end
+
+  def destroy
+    @activity.destroy
+    redirect_to activities_path
+  end
+
+
+  private
+
+  def set_activity
+    @activity = Activity.find_by(id: params[:id])
+  end
+
+  def activity_params
+    params.require(:activity).permit(:name, :description, :camp_id)
+  end
+
+  def create_logic
     @activity = Activity.create(activity_params)
     if @activity.save
       2.times do
@@ -40,10 +67,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
+  def update_logic
     if @activity.update(activity_params)
       redirect_to @activity
     else
@@ -54,22 +78,6 @@ class ActivitiesController < ApplicationController
       end
       redirect_to :edit
     end
-  end
-
-  def destroy
-    @activity.destroy
-    redirect_to activities_path
-  end
-
-
-  private
-
-  def set_activity
-    @activity = Activity.find_by(id: params[:id])
-  end
-
-  def activity_params
-    params.require(:activity).permit(:name, :description, :camp_id)
   end
 
 end
