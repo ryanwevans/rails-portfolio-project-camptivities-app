@@ -1,4 +1,7 @@
 <% if camp %>
+  <p style="text-align:center;"><%= link_to "Add New Activity", new_camp_activity_path(@camp) %>
+  </p>
+  <br>
   <% camp.activities.each do |activity| %>
     <p>
       <%= link_to activity.name, activity_path(activity) %>
@@ -16,6 +19,9 @@
   <br>
   <br>
 <% else %>
+  <p style="text-align:center;"><%= link_to "Add New Activity", new_activity_path %>
+  </p>
+  <br>
   <% camps.each do |camp| %>
     <h3 style="font-weight:500;"><%= camp.name %></h3>
     <% camp.activities.each do |activity| %>

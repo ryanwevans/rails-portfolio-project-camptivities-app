@@ -11,4 +11,12 @@ module ActivitiesHelper
     end
   end
 
+  def activity_index_header
+    if @camp
+      "#{@camp.name} Activities"
+    else
+      "Activities"
+    end
+  end
+
 end

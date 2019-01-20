@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
     else
       @camps = Camp.all
     end
-    # @activities = Activity.all.order(:camp_id)
+    @activities = Activity.all.order(:camp_id)
   end
 
   def show

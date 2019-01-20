@@ -1,11 +1,3 @@
-<% if @camp %>
-  <h2><%= @camp.name %> Activities</h2>
-<% else %>
-  <h2>Activities</h2>
-<% end %>
-<br>
-<br>
-<%= link_to "Add New Activity", new_camp_activity_path(@camp) %>
-<br>
+<h2><%= activity_index_header %></h2>
 <br>
 <%= render partial: 'activity_list', locals: {activities: @activities, camp: @camp, camps: @camps} %>
