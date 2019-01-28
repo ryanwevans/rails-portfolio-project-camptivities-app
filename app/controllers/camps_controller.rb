@@ -6,8 +6,6 @@ class CampsController < ApplicationController
   end
 
   def show
-    # @assignment = @camp.activity.assignments.where("camp_counselor_id=?", @current_user.id)
-    # @assignments = @camp.activity.assignments.order(:filled)
   end
 
   def new
