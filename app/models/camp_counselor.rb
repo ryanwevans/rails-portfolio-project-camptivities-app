@@ -6,9 +6,6 @@ class CampCounselor < ApplicationRecord
   validates_presence_of :email
   validates_uniqueness_of :email
 
-  validates_presence_of :age
-  validates_presence_of :admin
-
   has_many :assignments
   has_many :activities, through: :assignments
 
