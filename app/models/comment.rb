@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   validates_presence_of :title
-  validates_presence_of :comment
+  validates_presence_of :content
 
   belongs_to :activity
   belongs_to :camp_counselor
