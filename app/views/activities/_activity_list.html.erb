@@ -11,6 +11,8 @@
       <br>
       Fun Rating: <%= activity.assignments.average(:rating) %>
       <br>
+      <%= activity.comment.last %>
+      <br>
     </p>
     <%= render partial: 'activities/activity_availability', locals: {assignments: activity.assignments} %>
     <br>
@@ -32,8 +34,9 @@
         <br>
         <br>
         <%= activity.description %>
+        <br>Fun Rating: <%= activity.assignments.average(:rating) %>
         <br>
-        <br>
+        <%= activity.comment.last %>
         <br>
       </p>
     <% end %>
