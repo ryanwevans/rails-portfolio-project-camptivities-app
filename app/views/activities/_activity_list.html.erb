@@ -36,7 +36,7 @@
         <%= activity.description %>
         <br>Fun Rating: <%= activity.assignments.average(:rating) %>
         <br>
-        <%= activity.comment.last %>
+        <%= activity.comments.last %>
         <br>
       </p>
     <% end %>

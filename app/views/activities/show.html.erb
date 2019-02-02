@@ -14,11 +14,12 @@
 <br>
 <%= activity_edit_link %>
 <br>
-<%= link_to "Add a Comment", new_activity_comment(@activity) %>
+<%= link_to "Add a Comment", new_activity_comment_path(@activity) %>
 <br>
-<%= activity.comments.each do |comment| %>
-  <em><%= comment.title %></em>
+<% @activity.comments.each do |comment| %>
+  <%= comment.title %>
   <br>
-  <%= comment.content %>
+  <em><%= comment.content %></em>
+<% end %>
 <br>
 <br>
