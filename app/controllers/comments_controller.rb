@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :set_camp, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:activity_id]
-      @comments = Activity.find_by(id: params[:activity_id])
+      @activity = Activity.find_by(id: params[:activity_id])
+      @comments = @activity.comments
     else
       @comments = Comment.all
     end
@@ -13,16 +14,17 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @activity = Activity.find_by(id: params[:activity_id])
     @comment = Comment.new
   end
 
   def create
     @comment = Comment.create(comment_params)
-    if @comment.save!
+    if @comment.save
       redirect_to comment_path(@comment)
     else
       flash[:notice] = "Invalid Entry, Please Try Again"
-      render new_comment_path
+      redirect_to new_comment_path
     end
   end
 
@@ -55,7 +57,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:title, :content)
+    params.require(:comment).permit(:title, :content, :camp_counselor_id, :activity_id)
   end
 
 end
