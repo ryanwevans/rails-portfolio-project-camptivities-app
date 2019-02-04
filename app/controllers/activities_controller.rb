@@ -13,6 +13,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @assignments = @activity.assignments.order(:filled)
+    @comments = Comment.where("activity_id = ?", @activity.id)
   end
 
   def new

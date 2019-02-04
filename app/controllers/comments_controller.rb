@@ -14,17 +14,16 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @activity = Activity.find_by(id: params[:activity_id])
     @comment = Comment.new
   end
 
   def create
     @comment = Comment.create(comment_params)
     if @comment.save
-      redirect_to comment_path(@comment)
+      redirect_to activity_path(@comment.activity_id)
     else
       flash[:notice] = "Invalid Entry, Please Try Again"
-      redirect_to new_comment_path
+      redirect_to activity_path(@comment.activity_id)
     end
   end
 
