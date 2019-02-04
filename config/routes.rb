@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :assignments
-    resources :comments, shallow: true
   end
+
+  resources :comments 
 
   resources :assignments
 
