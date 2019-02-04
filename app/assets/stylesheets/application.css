@@ -37,6 +37,7 @@
  	-moz-osx-font-smoothing: grayscale;
  }
 
+
  body {
  	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
  	line-height: 1.4em;
@@ -135,6 +136,31 @@
   	font-size: 14px;
   	font-weight: 400;
   }
+
+
+  input[type="submit"] {
+    color: inherit;
+  	margin: 3px;
+  	padding: 3px 15px;
+  	text-decoration: none;
+    /* text-transform: uppercase; */
+  	font-size: 8px;
+  	font-weight: 400;
+  	border: 1px solid transparent;
+  	border-radius: 3px;
+    background-color: rgba(0,0,0,0);
+    border-style: none;
+    cursor: pointer;
+    display: inline;
+    font: inherit;
+    height: auto;
+    padding: 0;
+    perspective-origin: 0 0;
+    text-align: start;
+    transform-origin: 0 0;
+    width: auto;
+  }
+
 
  textarea {
     width: 100%;
