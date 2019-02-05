@@ -17,26 +17,7 @@ Availability:
 <br>
 <br>
 <br>
-What others have to say about <%= @activity.name %>:
-<br>
-<br>
-<br>
-<div style="text-align:center; color:grey">
-  <% @comments.each do |comment| %>
-    <strong><%= comment.title %></strong>
-    <br>
-    <em>"<%= comment.content %>"</em>
-    <br>
-    <% if comment.camp_counselor_id %>
-    <em style="font-size:12px; color:black">
-    posted by: <%= CampCounselor.find_by(id: comment.camp_counselor_id).name %>
-    </em>
-    <br>
-    <% end %>
-    <br>
-    <br>
-  <% end %>
-</div>
+<%= render partial: 'activity_comments', locals: {activity: @activity, comments: @comments} %>
 <br>
 <br>
 <br>
