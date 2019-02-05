@@ -1,0 +1,14 @@
+<%= form_for :comment, url: comments_path, method: :post do |f| %>
+  <%= f.label :title, "Title" %>
+  <br>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.hidden_field :activity_id, value: @activity.id %>
+  <%= f.hidden_field :camp_counselor_id, value: current_user.id %>
+
+  <%= f.label :content, "Comments" %>
+  <br>
+  <%= f.text_area :content, size: "50x10" %>
+  <br>
+  <%= f.submit "Submit Comment" %>
+<% end %>

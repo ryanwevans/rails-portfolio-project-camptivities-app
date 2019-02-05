@@ -11,7 +11,7 @@
   Fun Rating: <%= @activity.assignments.average(:rating) %>
   <br>
 </p>
-Availability: 
+Availability:
 <%= render partial: 'activity_availability', locals: {assignments: @assignments} %>
 <br>
 <br>
@@ -22,19 +22,20 @@ What others have to say about <%= @activity.name %>:
 <br>
 <br>
 <div style="text-align:center; color:grey">
-<% @comments.each do |comment| %>
-  <strong><%= comment.title %></strong>
-  <br>
-  <em>"<%= comment.content %>"</em>
-  <br>
-  <% if comment.camp_counselor_id %>
-  <em style="font-size:12px; color:black">
-  posted by: <%= CampCounselor.find_by(id: comment.camp_counselor_id).name %>
-  </em>
+  <% @comments.each do |comment| %>
+    <strong><%= comment.title %></strong>
+    <br>
+    <em>"<%= comment.content %>"</em>
+    <br>
+    <% if comment.camp_counselor_id %>
+    <em style="font-size:12px; color:black">
+    posted by: <%= CampCounselor.find_by(id: comment.camp_counselor_id).name %>
+    </em>
+    <br>
+    <% end %>
+    <br>
+    <br>
   <% end %>
-  <br>
-  <br>
-<% end %>
 </div>
 <br>
 <br>
@@ -44,20 +45,7 @@ Share your comments about <%= @activity.name %>:
 <br>
 <br>
 <div class="fields_with_errors", id="form">
-  <%= form_for :comment, url: comments_path, method: :post do |f| %>
-    <%= f.label :title, "Title" %>
-    <br>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.hidden_field :activity_id, value: @activity.id %>
-    <%= f.hidden_field :camp_counselor_id, value: current_user.id %>
-
-    <%= f.label :content, "Comments" %>
-    <br>
-    <%= f.text_area :content, size: "50x10" %>
-    <br>
-    <%= f.submit "Submit Comment" %>
-  <% end %>
+  <%= render :partial => 'comments/form', locals: {activity: @activity} %>
 </div>
 <br>
 <br>
