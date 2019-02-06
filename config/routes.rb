@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :assignments
   end
 
-  resources :comments 
+  resources :comments , only: [:new, :create]
 
   resources :assignments
 
