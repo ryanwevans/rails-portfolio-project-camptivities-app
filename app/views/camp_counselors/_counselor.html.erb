@@ -12,7 +12,27 @@
   <% end %>
   <br>
   <br>
+  <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
+  <br>
+  <br>
+  <br>
+  Here are the activities you signed up for:
+  <% if counselor.activities %>
+    <% counselor.activities.each do |activity| %>
+      <br>
+      <br>
+      <strong><em>
+      <%= activity.name %>
+      </em></strong>
+      <br>
+      <%= activity.description %>
+      <br>
+    <% end %>
+  <% else %>
+    You have not signed up for any activities yet...
+  <% end %>
+  <br>
   <%= link_to "View All Your Assignments", camp_counselor_assignments_path(counselor) %>
   <br>
-  <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
+  <br>
 </p>

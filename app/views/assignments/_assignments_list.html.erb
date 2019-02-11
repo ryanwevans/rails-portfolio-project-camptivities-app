@@ -43,6 +43,7 @@
         <br>
         <%= form_for assignment do |f| %>
         <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
+        <%= f.hidden_field :activity_id, :value => assignment.activity.id %>
         <%= f.hidden_field :filled, :value => true %>
         <%= f.submit "Take this Assignment" %>
         <% end %>
