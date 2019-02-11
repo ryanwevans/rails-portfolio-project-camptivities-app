@@ -15,6 +15,12 @@ Availability:
 <%= render partial: 'activity_availability', locals: {assignments: @assignments} %>
 <br>
 <br>
+Counselors that are signed up for this activity:
+<br>
+<% @activity.camp_counselors.each do |counselor| %>
+  <em><%= counselor.name %></em>
+  <br>
+<% end %>
 <br>
 <br>
 <%= render partial: 'activity_comments', locals: {activity: @activity, comments: @comments} %>
