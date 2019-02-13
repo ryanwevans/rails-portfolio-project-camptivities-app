@@ -75,7 +75,7 @@ def make_activities
     end
     if new_activity.save
       2.times do
-        new_activity.assignments.create(:activity_id => new_activity.id, :filled => false, :rating => 0)
+        new_activity.assignments.create(:activity_id => new_activity.id, :camp_id => new_activity.camp_id, :filled => false, :rating => 0)
       end
     end
   end
