@@ -1,6 +1,7 @@
 class CampCounselorsController < ApplicationController
   skip_before_action :require_log_in, only: [:new, :create]
   before_action :set_counselor, only: [:show, :edit, :update, :destroy]
+  include CampCounselorsHelper
 
   def new
     @counselor = CampCounselor.new
