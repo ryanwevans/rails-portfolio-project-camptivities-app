@@ -8,6 +8,7 @@ class CampCounselor < ApplicationRecord
 
   has_many :assignments
   has_many :activities, through: :assignments
+  has_many :camps, through: :assignments
 
   has_many :comments
 

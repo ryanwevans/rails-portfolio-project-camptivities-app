@@ -11,8 +11,8 @@
   <em><%= "You have a Camp Admin account" %></em>
   <% end %>
   <br>
-  <br>
   <%= link_to "Edit Your Profile", edit_camp_counselor_path(:current_user) %>
+  <br>
   <br>
   <br>
   <br>
@@ -35,4 +35,14 @@
   <%= link_to "View All Your Assignments", camp_counselor_assignments_path(counselor) %>
   <br>
   <br>
+  <br>
+  <strong><em>Camps you are associated with:</em></strong>
+  <br>
+  <% counselor.camps.each do |camp| %>
+    <%= camp.name %>
+    <br>
+    <%= camp.location %>
+    <br>
+    <br>
+  <% end %>
 </p>
