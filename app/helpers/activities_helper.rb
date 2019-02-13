@@ -19,7 +19,7 @@ module ActivitiesHelper
     end
   end
 
-  
+
   def create_logic
     @activity = Activity.create(activity_params)
     if @activity.save
