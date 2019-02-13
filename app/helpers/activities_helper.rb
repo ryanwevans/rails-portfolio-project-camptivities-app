@@ -24,7 +24,8 @@ module ActivitiesHelper
     @activity = Activity.create(activity_params)
     if @activity.save
       2.times do
-        @activity.assignments.create(:activity_id => @activity.id, :filled => false, :rating => 0)
+        # add :camp_id to assignment creation below
+        @activity.assignments.create(:activity_id => @activity.id, :camp_id => @activity.camp_id, :filled => false, :rating => 0)
       end
       redirect_to activity_path(@activity)
     else

@@ -6,6 +6,14 @@
 </div>
 <br>
 <br>
+<strong><em>Camp Counselors already signed up:</em></strong>
+<br>
+<% @camp.camp_counselors.each do |counselor| %>
+  <%= counselor.name %>
+  <br>
+<% end %>
+<br>
+<br>
 <p style="text-align:center;">
   <%= link_to "View #{@camp.name} Activities", camp_activities_path(@camp) %>
 </p>
