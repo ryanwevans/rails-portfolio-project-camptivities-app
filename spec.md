@@ -5,19 +5,20 @@ Specs:
   + *Using Rails 5.2.1*
 
 - [x] Include at least one has_many relationship (x has_many y; e.g. User has_many Recipes)
-  + *Activity has_many Assignments*
-  + *CampCounselor has_many Assignments*
+  + *Activity has_many Assignments (activity#show line 11)*
+  + *CampCounselor has_many Assignments (_counselor.html.erb line 35)*
 
 - [x] Include at least one belongs_to relationship (x belongs_to y; e.g. Post belongs_to User)
-  + *Assignment belongs_to Activities, Assignment belongs_to CampCounselor*
+  + *Assignment belongs_to Activities (_assignments_list.html.erb lines 7, 11, 39, 42)*
+  + *Assignment belongs_to CampCounselor (_assignments_list.html.erb line 1)*
 
 - [x] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
-	+ *Camp has_many Assignments through Activities*
-	+ *Camp has_many CampCounselors through Assignments*
+  + *Camp has_many CampCounselors through Assignments (camp#show line 11)*
+	+ *CampCounselor has_many Camps through Assignments (_counselor.html.erb line 43)*
 
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
-  + *Activity has_many CampCounselors through Assignments*
-  + *CampCounselor has_many Activities through Assignments*
+  + *Activity has_many CampCounselors through Assignments (activity#show line 20)*
+  + *CampCounselor has_many Activities through Assignments (_counselor.html.erb line 20)*
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
   + *Assignment.rating*
