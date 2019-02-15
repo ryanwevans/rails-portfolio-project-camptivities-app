@@ -2,6 +2,7 @@
   <em>
     <% if assignment.filled %>
       <%= "One assignment is full" %>
+      <br>
     <% else %>
       <%= form_for assignment do |f|  %>
       <%= f.hidden_field :camp_counselor_id, :value => current_user.id  %>
@@ -11,3 +12,4 @@
     <% end  %>
   </em>
 <% end %>
+<br>
