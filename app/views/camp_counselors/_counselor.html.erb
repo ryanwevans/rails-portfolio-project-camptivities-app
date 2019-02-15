@@ -17,13 +17,11 @@
   <br>
   <br>
   Here are the activities you signed up for:
+  <br>
   <% if counselor.activities %>
     <% counselor.activities.each do |activity| %>
       <br>
-      <br>
-      <strong><em>
-      <%= activity.name %>
-      </em></strong>
+      <strong><em><%= activity.name %></em></strong>
       <br>
       <%= camp_name(activity) %>
       <br>
@@ -38,13 +36,16 @@
   <br>
   <br>
   <br>
-  <strong><em>Camps you are associated with:</em></strong>
+  <br>
+  Camps you are associated with:
   <br>
   <% counselor.camps.each do |camp| %>
-    <%= camp.name %>
+    <br>
+    <strong><em><%= camp.name %></em></strong>
     <br>
     <%= camp.location %>
     <br>
-    <br>
   <% end %>
 </p>
+<br>
+<br>
