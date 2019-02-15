@@ -8,6 +8,7 @@ class AssignmentsController < ApplicationController
     else
       @assignments = Assignment.all
     end
+    @camps = Camp.all
   end
 
   def show

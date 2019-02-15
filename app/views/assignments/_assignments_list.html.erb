@@ -33,24 +33,30 @@
   <h2>All Assignments</h2>
   <br>
   <br>
-  <% assignments.each do |assignment| %>
+  <% camps.each do |camp| %>
+    <br>
+    <h3 style="font-weight:500;"><%= camp.name %></h3>
+    <br>
+    <% camp.assignments.each do |assignment| %>
       <% if assignment.filled==false %>
         <div class="linkstyle">
         <%= assignment.activity.name %>
         </div>
         <p>
           <%= assignment.activity.description %>
-        <br>
-        <%= form_for assignment do |f| %>
-        <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
-        <%= f.hidden_field :activity_id, :value => assignment.activity.id %>
-        <%= f.hidden_field :filled, :value => true %>
-        <%= f.submit "Take this Assignment" %>
-        <% end %>
-        <br>
-        <br>
-        <br>
-      </p>
+          <br>
+          <em>
+          <%= form_for assignment do |f| %>
+          <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
+          <%= f.hidden_field :activity_id, :value => assignment.activity.id %>
+          <%= f.hidden_field :filled, :value => true %>
+          <%= f.submit "Take this Assignment" %>
+          <% end %>
+          </em>
+          <br>
+          <br>
+        </p>
       <% end %>
+    <% end %>
   <% end %>
 <% end %>
