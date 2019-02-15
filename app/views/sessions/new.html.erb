@@ -5,13 +5,13 @@
 
 <p>
   <%= render partial: 'login_form' %>
-  <br>
-  or
-  <br>
-  <%= link_to('Log in with Facebook', '/auth/facebook') %>
-  <br>
-  <br>
   <%= form_tag new_camp_counselor_path, method: :get do %>
   <%= submit_tag "Create an Account" %>
   <% end %>
+  <br>
+  or
+  <br>
 </p>
+  <div>
+  <%= link_to('Log in with Facebook', '/auth/facebook') %>
+  </div>
