@@ -39,7 +39,7 @@
   <br>
   Camps you are associated with:
   <br>
-  <% counselor.camps.each do |camp| %>
+  <% counselor.camps.uniq.each do |camp| %>
     <br>
     <strong><em><%= camp.name %></em></strong>
     <br>
