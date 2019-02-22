@@ -13,6 +13,7 @@
       <br>
       <br>
       <% if assignment.rating == 0 %>
+        How was this assignment?
         <%= form_for assignment do |f| %>
           <%= f.submit "Submit Rating" %> 1
           <%= f.radio_button :rating, '1' %>
@@ -30,7 +31,7 @@
     </p>
   <% end %>
 <% else %>
-  <h2>All Assignments</h2>
+  <h2>Available Assignments</h2>
   <br>
   <br>
   <% camps.each do |camp| %>
