@@ -3,8 +3,11 @@
 
 <%= render partial: 'layouts/flash_notice' %>
 
-<p>
+<br>
+<div class="fields_with_errors", id="form">
   <%= render partial: 'login_form' %>
+</div>
+<p>
   <%= form_tag new_camp_counselor_path, method: :get do %>
   <%= submit_tag "Create an Account" %>
   <% end %>
