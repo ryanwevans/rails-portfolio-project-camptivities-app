@@ -25,7 +25,7 @@ class AssignmentsController < ApplicationController
       redirect_to assignments_path(@assignment)
     else
       flash[:notice] = "Unable to Create Assignments for New Activity - Please Try Again"
-      render new_activity_path
+      redirect_to new_activity_path
     end
   end
 
