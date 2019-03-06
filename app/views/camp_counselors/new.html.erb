@@ -3,4 +3,7 @@
 
 <%= render partial: 'layouts/flash_notice' %>
 
-<%= render partial: 'new_counselor', locals: {counselor: @counselor} %>
+<br>
+<div class="fields_with_errors", id="form">
+  <%= render partial: 'new_counselor', locals: {counselor: @counselor} %>
+</div>
