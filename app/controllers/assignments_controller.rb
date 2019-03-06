@@ -1,14 +1,9 @@
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  include AssignmentsHelper
 
   def index
-    if params[:camp_counselor_id]
-      @counselor = CampCounselor.find_by(id: params[:camp_counselor_id])
-      @assignments = @counselor.assignments
-    else
-      @assignments = Assignment.all
-    end
-    @camps = Camp.all
+    set_index_variables
   end
 
   def show
@@ -20,25 +15,14 @@ class AssignmentsController < ApplicationController
   end
 
   def create
-    @assignment = Assignment.create(assignment_params)
-    if @assignment.save!
-      redirect_to assignments_path(@assignment)
-    else
-      flash[:notice] = "Unable to Create Assignments for New Activity - Please Try Again"
-      redirect_to new_activity_path
-    end
+    create_logic
   end
 
   def edit
   end
 
   def update
-    if params[:assignment]==nil
-      flash[:notice] = "Invalid Entry - Please Try Again"
-      redirect_to camp_counselor_assignments_path(current_user)
-    elsif @assignment.update(assignment_params)
-      redirect_to camp_counselor_assignments_path(current_user)
-    end
+    update_logic
   end
 
   def destroy
