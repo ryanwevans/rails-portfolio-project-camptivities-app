@@ -3,11 +3,7 @@ class ActivitiesController < ApplicationController
   include ActivitiesHelper
 
   def index
-    if params[:camp_id]
-      @camp = Camp.find_by(id: params[:camp_id])
-    else
-      @camps = Camp.all
-    end
+    params[:camp_id] ? (@camp = Camp.find_by(id: params[:camp_id])) : (@camps = Camp.all)
     @activities = Activity.all.order(:camp_id)
   end
 
@@ -17,9 +13,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    if params[:camp_id]
-      @camp = Camp.find_by(id: params[:camp_id])
-    end
+    @camp = Camp.find_by(id: params[:camp_id]) if params[:camp_id]
     @activity = Activity.new
   end
 
