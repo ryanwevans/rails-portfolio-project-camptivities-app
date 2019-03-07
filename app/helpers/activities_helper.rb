@@ -19,39 +19,4 @@ module ActivitiesHelper
     end
   end
 
-
-  def create_logic
-    @activity = Activity.create(activity_params)
-    if @activity.save
-      2.times do
-        # add :camp_id to assignment creation below
-        @activity.assignments.create(:activity_id => @activity.id, :camp_id => @activity.camp_id, :filled => false, :rating => 0)
-      end
-      redirect_to activity_path(@activity)
-    else
-      if @activity.name==""
-        flash[:notice] = "Activity Name is required"
-      elsif @activity.description==""
-        flash[:notice] = "Description is required"
-      elsif @activity.camp_id==""
-        flash[:notice] = "Camp Name is required"
-      end
-      redirect_to new_activity_path
-    end
-  end
-
-  def update_logic
-    if @activity.update(activity_params)
-      redirect_to @activity
-    else
-      if @activity.name==""
-        flash[:notice] = "Activity Name is required"
-      else @activity.description==""
-        flash[:notice] = "Description is required"
-      end
-      redirect_to :edit
-    end
-  end
-
-
 end

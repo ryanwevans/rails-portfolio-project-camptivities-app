@@ -22,4 +22,8 @@ module SessionsHelper
     end
   end
 
+  def login_error
+    flash[:notice]
+  end
+
 end
