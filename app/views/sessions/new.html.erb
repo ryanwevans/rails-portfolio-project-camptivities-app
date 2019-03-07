@@ -1,10 +1,12 @@
 <h2>Welcome to Camptivities!</h2>
 <br>
 
-<%= render partial: 'layouts/flash_notice' %>
+<div class="notice">
+  <%= login_error %>
+</div>
 
 <br>
-<div class="fields_with_errors", id="form">
+<div id="form">
   <%= render partial: 'login_form' %>
 </div>
 <p>
