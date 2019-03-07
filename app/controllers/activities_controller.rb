@@ -4,12 +4,14 @@ class ActivitiesController < ApplicationController
 
   def index
     params[:camp_id] ? (@camp = Camp.find_by(id: params[:camp_id])) : (@camps = Camp.all)
-    @activities = Activity.all.order(:camp_id)
+    # @activities = Activity.all.order(:camp_id) <= not needed
+    # move to
   end
 
   def show
     @assignments = @activity.assignments.order(:filled)
     @comments = Comment.where("activity_id = ?", @activity.id)
+    # activity.comments
   end
 
   def new
@@ -42,6 +44,39 @@ class ActivitiesController < ApplicationController
 
   def activity_params
     params.require(:activity).permit(:name, :description, :camp_id)
+  end
+  
+  def create_logic
+    @activity = Activity.create(activity_params)
+    if @activity.save
+      2.times do
+        # add :camp_id to assignment creation below
+        @activity.assignments.create(:activity_id => @activity.id, :camp_id => @activity.camp_id, :filled => false, :rating => 0)
+      end
+      redirect_to activity_path(@activity)
+    else
+      if @activity.name==""
+        flash[:notice] = "Activity Name is required"
+      elsif @activity.description==""
+        flash[:notice] = "Description is required"
+      elsif @activity.camp_id==""
+        flash[:notice] = "Camp Name is required"
+      end
+      render new_activity_path
+    end
+  end
+
+  def update_logic
+    if @activity.update(activity_params)
+      redirect_to @activity
+    else
+      if @activity.name==""
+        flash[:notice] = "Activity Name is required"
+      else @activity.description==""
+        flash[:notice] = "Description is required"
+      end
+      redirect_to :edit
+    end
   end
 
 end

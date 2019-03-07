@@ -8,7 +8,13 @@ class CampCounselorsController < ApplicationController
   end
 
   def create
-    create_logic
+    @counselor = CampCounselor.create(counselor_params)
+    if @counselor.save
+      session[:user_id] = @counselor.id
+      redirect_to camp_counselor_path(@counselor)
+    else
+      render :new
+    end
   end
 
   def show
@@ -18,7 +24,12 @@ class CampCounselorsController < ApplicationController
   end
 
   def update
-    update_logic
+    if @counselor.update(counselor_params)
+      redirect_to camp_counselor_path(@counselor)
+    else
+      flash[:notice] = "Invalid Entry - Please Try Again"
+      redirect_to edit_camp_counselor_path
+    end
   end
 
   def destroy
