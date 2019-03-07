@@ -19,14 +19,14 @@ class AssignmentsController < ApplicationController
     if @assignment.save!
       redirect_to assignments_path(@assignment)
     else
-      flash[:notice] = "Unable to Create Assignments for New Activity - Please Try Again"
-      redirect_to new_activity_path
+      render :new
     end
   end
 
   def edit
   end
 
+# not sure how to 'render' to the nested path here
   def update
     if params[:assignment]==nil
       flash[:notice] = "Invalid Entry - Please Try Again"

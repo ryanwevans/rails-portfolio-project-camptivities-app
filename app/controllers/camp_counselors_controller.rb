@@ -27,8 +27,7 @@ class CampCounselorsController < ApplicationController
     if @counselor.update(counselor_params)
       redirect_to camp_counselor_path(@counselor)
     else
-      flash[:notice] = "Invalid Entry - Please Try Again"
-      redirect_to edit_camp_counselor_path
+      render :edit
     end
   end
 
