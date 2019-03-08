@@ -52,7 +52,6 @@ class ActivitiesController < ApplicationController
     @activity = Activity.create(activity_params)
     if @activity.save
       2.times do
-        # add :camp_id to assignment creation below
         @activity.assignments.create(:activity_id => @activity.id, :camp_id => @activity.camp_id, :filled => false, :rating => 0)
       end
       redirect_to activity_path(@activity)
