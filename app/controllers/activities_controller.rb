@@ -4,14 +4,12 @@ class ActivitiesController < ApplicationController
 
   def index
     params[:camp_id] ? (@camp = Camp.find_by(id: params[:camp_id])) : (@camps = Camp.all)
-    # @activities = Activity.all.order(:camp_id) <= not needed
-    # move to
+    # change to utilize activerecord method on Activity, i.e. Activity.camp = ...
   end
 
   def show
-    @assignments = @activity.assignments.order(:filled)
-    @comments = Comment.where("activity_id = ?", @activity.id)
-    # activity.comments
+    @assignments = @activity.assignments.order_by_filled
+    @comments = @activity.comments
   end
 
   def new
@@ -27,7 +25,11 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    update_logic
+    if @activity.update(activity_params)
+      redirect_to @activity
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -56,14 +58,6 @@ class ActivitiesController < ApplicationController
       redirect_to activity_path(@activity)
     else
       render :new
-    end
-  end
-
-  def update_logic
-    if @activity.update(activity_params)
-      redirect_to @activity
-    else
-      render :edit
     end
   end
 
