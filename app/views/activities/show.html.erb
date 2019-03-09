@@ -31,6 +31,9 @@ Counselors that are signed up for this activity:
 <br>
 Share your comments about <%= @activity.name %>:
 <br>
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
 <br>
 <div id="form">
   <%= render :partial => 'comments/form', locals: {activity: @activity} %>

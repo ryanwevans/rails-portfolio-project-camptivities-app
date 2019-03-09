@@ -5,13 +5,12 @@ include CommentsHelper
     @comment = Comment.new
   end
 
-# not sure how to refactor the else statement if the render goes back to the same page, and what is the path?
   def create
     @comment = Comment.create(comment_params)
     if @comment.save
       redirect_to activity_path(@comment.activity_id)
     else
-      flash[:notice] = "Invalid Entry, Please Try Again"
+      flash[:notice] = "Fields Cannot be Blank"
       redirect_to activity_path(@comment.activity_id)
     end
   end
