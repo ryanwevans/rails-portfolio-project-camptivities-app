@@ -3,8 +3,7 @@ class ActivitiesController < ApplicationController
   include ActivitiesHelper
 
   def index
-    params[:camp_id] ? (@camp = Camp.find_by(id: params[:camp_id])) : (@camps = Camp.all)
-    # change to utilize activerecord method on Activity, i.e. Activity.camp = ...
+    @activities = Activity.all.sorted_asc
   end
 
   def show

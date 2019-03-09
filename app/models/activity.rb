@@ -11,4 +11,8 @@ class Activity < ApplicationRecord
 
   belongs_to :camp
 
+  def self.sorted_asc
+    order(name: :asc)
+  end
+
 end
