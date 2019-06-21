@@ -3,7 +3,12 @@ class ActivitiesController < ApplicationController
   include ActivitiesHelper
 
   def index
-    @activities = Activity.all.sorted_asc
+    if params[:camp_id]
+      @camp = Camp.find_by(id: params[:camp_id]) if params[:camp_id]
+      @activities = @camp.activities.sorted_asc
+    else
+      @activities = Activity.all.sorted_asc
+    end
   end
 
   def show
