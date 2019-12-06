@@ -136,7 +136,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.2)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -240,7 +240,7 @@ DEPENDENCIES
   loofah (>= 2.2.3)
   omniauth
   omniauth-facebook
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack (>= 2.0.6)
   rails (~> 5.2.1)
   sass-rails (~> 5.0)
